@@ -1,14 +1,24 @@
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 155px;
+}
+
+body{
+    margin: 0;
+    padding-top: 155px;
+}
+
 img.logo{
+    display: block;
     width: 125px;
-    height:auto;
+    height: auto;
     border-radius: 50%;
-    overflow:hidden;
 }
 
 header{
-    position:fixed;
+    position: fixed;
     width: 100%;
-    top:0;
+    top: 0;
     left: 0;
     z-index: 10;
     background-color: black;
@@ -20,18 +30,37 @@ header{
     align-items: center;
 }
 
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 a.navi{
+    display: block;
     text-decoration: none;
-    color:white ;
-    align-items: right;
+    color: white;
     border-radius: 5px;
     padding: 10px 20px;
 }
 
-img.bandeau{
-height: 150px;
+a.navi:hover,
+a.navi:focus-visible{
+    background-color: white;
+    color: black;
 }
 
-body{
-    padding-top: 100px;
+img.bandeau{
+    display: block;
+    height: 150px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
 }
