@@ -1,0 +1,7 @@
+services:
+  site:
+    build: .
+    container_name: site-sae106
+    restart: unless-stopped
+    ports:
+      - "30080:80"
