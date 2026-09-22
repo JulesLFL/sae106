@@ -3,34 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="css/style.css" rel="stylesheet">
     <title>Mon site</title>
+    <script src="js/main.js" defer></script>
+    
 </head>
 
 <body>
     <header>
         <img class ="logo" src="source/logo.png" alt="Logo de l'IUT de maubeuge">
-        <div id ="SideNav" class="sidenav">
-            <a id="CloseBtn" href="#" class="close">x</a>
-            <ul>
-                <li><a href="#">Onglet1</a></li>
-                <li><a href="#">Onglet2</a></li>
-                <li><a href="#">Onglet3</a></li>
-                <li><a href="#">Onglet4</a></li>
-            </ul>
+        <div class="topnav" id="MyTopnav">
+            <a href="#Onglet4" class="active">Onglet4</a>
+            <a href="#Onglet3" class="active">Onglet3</a>
+            <a href="#Onglet2" class="active">Onglet2</a>
+            <a href="#Onglet1" class="active">Onglet1</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
-        
-        <a href="#" id="openBtn">
-            <span class="burger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </a>
     </header>
-<!--Code obtenue sur https://blog.hubspot.fr/website/menu-burger-css?hubs_content=blog.hubspot.fr/website/menu-navigation&hubs_content-cta=menu-hamburger-->
+<!--Code obtenue sur https://www.w3schools.com/HOWTO/howto_js_topnav_responsive.asp?utm_source=chatgpt.com-->
 
     <h1>Ça marche !</h1>
     <h2>Coucou</h2>
 </body>
+
 </html>
+
