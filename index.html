@@ -5,55 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/components/header.css" rel="stylesheet">
+    <link href="css/pages/index.css" rel="stylesheet">
     <title>SAE 106 – IUT de Maubeuge</title>
     <script src="js/main.js" defer></script>
-
 </head>
 
 <body>
     <header>
-        <a href="#top">
+        <a href="index.html">
             <img class="logo" src="source/logo.png" alt="Logo de l'IUT de Maubeuge">
         </a>
-        <nav aria-label="Menu principal">
+        <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="menu" aria-label="Menu principal">
             <ul>
-                <li><a href="#Onglet1" class="navi">Onglet1</a></li>
-                <li><a href="#Onglet2" class="navi">Onglet2</a></li>
-                <li><a href="#Onglet3" class="navi">Onglet3</a></li>
-                <li><a href="#Onglet4" class="navi">Onglet4</a></li>
+                <li><a href="page/onglet1.html" class="navi">Onglet1</a></li>
+                <li><a href="page/onglet2.html" class="navi">Onglet2</a></li>
+                <li><a href="page/onglet3.html" class="navi">Onglet3</a></li>
+                <li><a href="page/onglet4.html" class="navi">Onglet4</a></li>
             </ul>
         </nav>
     </header>
-<!--Code obtenue sur https://www.w3schools.com/HOWTO/howto_js_topnav_responsive.asp?utm_source=chatgpt.com-->
-    <main id="top">
+
+    <main>
         <section class="section1">
             <img class="bandeau" src="source/imgpres.png" alt="Bannière de la SAE 106">
         </section>
 
         <h1>Ça marche !</h1>
         <h2>Coucou</h2>
-
-        <section id="Onglet1">
-            <h2>Onglet1</h2>
-        </section>
-
-        <section id="Onglet2">
-            <h2>Onglet2</h2>
-        </section>
-
-        <section id="Onglet3">
-            <h2>Onglet3</h2>
-        </section>
-
-        <section id="Onglet4">
-            <h2>Onglet4</h2>
-        </section>
     </main>
 
     <footer>
-        <p>SAE 106 – IUT de Maubeuge (UPHF)</p>
+        <p>SAE 106 – IUT de Maubeuge (UPHF) – <span id="annee">2026</span></p>
     </footer>
 </body>
 

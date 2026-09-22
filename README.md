@@ -8,10 +8,13 @@ Le site est servi par un conteneur **nginx** (image `nginx:alpine`) et exposé s
 
 ```
 sae106/
-├── index.html            Page principale
-├── page/                 Pages secondaires
-├── css/                  Feuilles de style
-├── js/                   Scripts
+├── index.html            Page d'accueil
+├── page/                 Pages des onglets (onglet1.html à onglet4.html)
+├── css/
+│   ├── style.css         Styles de base communs à toutes les pages
+│   ├── components/       Styles des éléments partagés (header, menu)
+│   └── pages/            Styles propres à une page
+├── js/main.js            Menu hamburger, page active, année du footer
 ├── source/               Images (logo, bannière)
 ├── Dockerfile            Image nginx contenant le site
 ├── docker-compose.yml    Service "site" exposé sur le port 30080
