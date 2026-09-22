@@ -1,4 +1,22 @@
 img.logo{
-    width: 300px;
+    width: 125px;
     height:auto;
+    border-radius: 50%;
+    overflow:hidden;
+
+}
+
+header{
+    position:fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    z-index: 10;
+    background-color: black;
+    padding: 15px 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
