@@ -11,27 +11,24 @@ header{
     justify-content: space-between;
     align-items: center;
 
-    background-color: rgba(14, 12, 9, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: background-color 0.3s, box-shadow 0.3s;
+    background-color: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--bordure);
+    transition: box-shadow 0.3s;
     animation: descente 0.6s ease both;
 }
 
-header::after{
+header::before{
     content: "";
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--cyan), var(--rose), var(--or));
-    opacity: 0.7;
+    height: 4px;
+    background-color: var(--primaire);
 }
 
 header.defile{
-    background-color: rgba(14, 12, 9, 0.95);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(31, 36, 48, 0.08);
 }
 
 .marque{
@@ -39,8 +36,9 @@ header.defile{
     align-items: center;
     gap: 12px;
     font-family: var(--police-titre);
-    font-size: 1.3rem;
-    color: var(--texte);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primaire);
     text-decoration: none;
 }
 
@@ -50,15 +48,15 @@ img.logo{
     height: 60px;
     border-radius: 50%;
     background-color: white;
-    box-shadow: 0 0 0 2px var(--or);
+    box-shadow: 0 0 0 1px var(--bordure);
     transition: transform 0.4s;
 }
 
 .marque:hover img.logo{
-    transform: rotate(-8deg) scale(1.05);
+    transform: scale(1.05);
 }
 
-nav ul{
+header nav ul{
     display: flex;
     gap: 6px;
     list-style: none;
@@ -70,9 +68,9 @@ a.navi{
     position: relative;
     display: block;
     padding: 10px 16px;
-    border-radius: 999px;
-    font-weight: 500;
-    color: var(--texte-doux);
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--texte);
     text-decoration: none;
     transition: color 0.3s, background-color 0.3s;
 }
@@ -84,7 +82,7 @@ a.navi::after{
     right: 16px;
     bottom: 6px;
     height: 2px;
-    background: linear-gradient(90deg, var(--cyan), var(--rose));
+    background-color: var(--accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s;
@@ -92,7 +90,7 @@ a.navi::after{
 
 a.navi:hover,
 a.navi:focus-visible{
-    color: var(--texte);
+    color: var(--primaire);
 }
 
 a.navi:hover::after,
@@ -101,8 +99,8 @@ a.navi:focus-visible::after{
 }
 
 a.navi[aria-current="page"]{
-    color: var(--fond);
-    background-color: var(--or);
+    color: var(--surface);
+    background-color: var(--primaire);
 }
 
 a.navi[aria-current="page"]::after{
@@ -126,7 +124,7 @@ a.navi[aria-current="page"]::after{
     height: 4px;
     width: 100%;
     border-radius: 2px;
-    background-color: var(--texte);
+    background-color: var(--primaire);
     transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -152,14 +150,15 @@ header.menu-ouvert .burger span:nth-child(3){
         display: flex;
     }
 
-    nav{
+    header nav{
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         padding: 12px 16px 20px;
-        background-color: rgba(14, 12, 9, 0.97);
+        background-color: var(--surface);
         border-bottom: 1px solid var(--bordure);
+        box-shadow: 0 10px 20px rgba(31, 36, 48, 0.08);
 
         opacity: 0;
         visibility: hidden;
@@ -173,13 +172,12 @@ header.menu-ouvert .burger span:nth-child(3){
         transform: translateY(0);
     }
 
-    nav ul{
+    header nav ul{
         flex-direction: column;
     }
 
     a.navi{
         padding: 14px 16px;
-        border-radius: 12px;
     }
 
     a.navi::after{

@@ -1,0 +1,44 @@
+.fil-ariane{
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.fil-ariane ol{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--texte-doux);
+}
+
+.fil-ariane li{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fil-ariane li + li::before{
+    content: "›";
+    content: "›" / "";
+    color: var(--texte-doux);
+}
+
+.fil-ariane a{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primaire);
+    text-decoration: none;
+}
+
+.fil-ariane a:hover{
+    text-decoration: underline;
+}
+
+.fil-ariane [aria-current="page"]{
+    font-weight: 600;
+    color: var(--texte);
+}

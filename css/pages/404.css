@@ -1,8 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap");
+
 body.page-erreur{
+    --fond: #0e0c09;
+    --surface: #1a1712;
+    --surface-2: #25201a;
+    --texte: #f4efe6;
+    --texte-doux: #b9b0a0;
+    --bordure: rgba(255, 255, 255, 0.08);
+    --or: #d9a21f;
+    --cyan: #5ee0e6;
+    --rose: #e3a8f0;
+    --accent: #5ee0e6;
+    --police-titre: "Bungee", "Arial Black", sans-serif;
+    --police-texte: "Space Grotesk", Arial, Helvetica, sans-serif;
+    --police-mono: "Space Mono", "Courier New", monospace;
+
     padding-top: 0;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+    font-size: 1rem;
+    line-height: 1.6;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(94, 224, 230, 0.08), transparent 40%),
+        radial-gradient(circle at 90% 30%, rgba(217, 162, 31, 0.08), transparent 40%),
+        var(--fond);
+    background-attachment: fixed;
+}
+
+.page-erreur .bouton{
+    border-color: transparent;
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--fond);
+    background-color: var(--or);
+}
+
+.page-erreur .bouton:hover{
+    transform: translateY(-3px);
+    background-color: var(--or);
+    box-shadow: 0 10px 25px rgba(217, 162, 31, 0.35);
+}
+
+.page-erreur .bouton-secondaire{
+    color: var(--texte);
+    background-color: transparent;
+    border-color: var(--bordure);
+}
+
+.page-erreur .bouton-secondaire:hover{
+    color: var(--texte);
+    background-color: transparent;
+    border-color: var(--cyan);
+    box-shadow: 0 10px 25px rgba(94, 224, 230, 0.2);
+}
+
+.page-erreur ::selection{
+    color: var(--fond);
+    background-color: var(--rose);
 }
 
 .etoiles{
@@ -95,6 +150,7 @@ main.erreur > :nth-child(6){ animation-delay: 0.5s; }
     position: relative;
     margin: 0;
     font-size: clamp(6rem, 22vw, 14rem);
+    font-weight: 400;
     line-height: 1;
     color: var(--texte);
     text-shadow: 6px 6px 0 var(--rose), -6px -6px 0 var(--cyan);

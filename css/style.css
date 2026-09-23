@@ -1,26 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap");
-@import url("components/animations.css?v=2");
-@import url("components/header.css?v=2");
-@import url("components/footer.css?v=2");
-@import url("components/cartes.css?v=2");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap");
+@import url("components/animations.css?v=3");
+@import url("components/header.css?v=3");
+@import url("components/footer.css?v=3");
+@import url("components/cartes.css?v=3");
+@import url("components/fil-ariane.css?v=3");
 
 :root{
     --header-height: 90px;
 
-    --fond: #0e0c09;
-    --surface: #1a1712;
-    --surface-2: #25201a;
-    --texte: #f4efe6;
-    --texte-doux: #b9b0a0;
-    --bordure: rgba(255, 255, 255, 0.08);
+    --fond: #f7f5f0;
+    --surface: #ffffff;
+    --surface-2: #efebe3;
+    --texte: #1f2430;
+    --texte-doux: #5a6070;
+    --bordure: #e2ddd2;
 
-    --or: #d9a21f;
-    --cyan: #5ee0e6;
-    --rose: #e3a8f0;
+    --primaire: #1f3a5f;
+    --primaire-fonce: #152a45;
+    --accent: #1a93b3;
+    --or: #b8892b;
 
-    --police-titre: "Bungee", "Arial Black", sans-serif;
-    --police-texte: "Space Grotesk", Arial, Helvetica, sans-serif;
-    --police-mono: "Space Mono", "Courier New", monospace;
+    --police-titre: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    --police-texte: "Source Sans 3", "Segoe UI", Arial, sans-serif;
 }
 
 *,
@@ -41,13 +42,10 @@ body{
     display: flex;
     flex-direction: column;
     font-family: var(--police-texte);
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--texte);
-    background:
-        radial-gradient(circle at 10% 0%, rgba(94, 224, 230, 0.08), transparent 40%),
-        radial-gradient(circle at 90% 30%, rgba(217, 162, 31, 0.08), transparent 40%),
-        var(--fond);
-    background-attachment: fixed;
+    background-color: var(--fond);
 }
 
 main{
@@ -55,29 +53,50 @@ main{
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px clamp(16px, 4vw, 32px) 0;
+    padding: 32px clamp(16px, 4vw, 32px) 0;
 }
 
 h1,
 h2,
 h3{
     font-family: var(--police-titre);
-    font-weight: 400;
-    line-height: 1.2;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--primaire);
 }
 
-.titre-degrade{
-    background: linear-gradient(90deg, var(--cyan), var(--rose), var(--or), var(--cyan));
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: degrade-anime 6s linear infinite;
+.titre-page{
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.titre-page::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 64px;
+    height: 3px;
+    background-color: var(--or);
+    transform: translateX(-50%);
 }
 
 .section-titre{
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin: 0 0 24px;
+    position: relative;
+    margin: 0 0 28px;
+    padding-bottom: 10px;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    border-bottom: 1px solid var(--bordure);
+}
+
+.section-titre::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 64px;
+    height: 3px;
+    background-color: var(--accent);
 }
 
 .bouton{
@@ -85,42 +104,42 @@ h3{
     align-items: center;
     gap: 10px;
     padding: 12px 24px;
-    border: 1px solid transparent;
-    border-radius: 999px;
+    border: 1px solid var(--primaire);
+    border-radius: 6px;
     font: inherit;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
-    color: var(--fond);
-    background-color: var(--or);
+    color: var(--surface);
+    background-color: var(--primaire);
     cursor: pointer;
-    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s, color 0.25s;
 }
 
 .bouton:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(217, 162, 31, 0.35);
+    transform: translateY(-2px);
+    background-color: var(--primaire-fonce);
+    box-shadow: 0 8px 20px rgba(31, 58, 95, 0.2);
 }
 
 .bouton-secondaire{
-    color: var(--texte);
+    color: var(--primaire);
     background-color: transparent;
-    border-color: var(--bordure);
 }
 
 .bouton-secondaire:hover{
-    border-color: var(--cyan);
-    box-shadow: 0 10px 25px rgba(94, 224, 230, 0.2);
+    color: var(--surface);
+    background-color: var(--primaire);
 }
 
 a:focus-visible,
 button:focus-visible{
-    outline: 2px solid var(--cyan);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
 }
 
 ::selection{
-    color: var(--fond);
-    background-color: var(--rose);
+    color: var(--surface);
+    background-color: var(--primaire);
 }
 
 @media (max-width: 768px){

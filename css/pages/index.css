@@ -1,17 +1,9 @@
 .hero{
-    position: relative;
     overflow: hidden;
-    border-radius: 24px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    border: 1px solid var(--bordure);
+    box-shadow: 0 16px 40px rgba(31, 36, 48, 0.12);
     animation: fondu-haut 0.8s ease both;
-}
-
-.hero::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(14, 12, 9, 0.6), transparent 50%);
-    pointer-events: none;
 }
 
 img.bandeau{
@@ -23,23 +15,23 @@ img.bandeau{
 }
 
 .hero:hover img.bandeau{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .intro{
-    max-width: 700px;
+    max-width: 720px;
     margin: 64px auto;
     text-align: center;
 }
 
 .intro h1{
-    margin: 0 0 16px;
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0 0 20px;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
 }
 
 .intro p{
     margin: 0 0 28px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--texte-doux);
 }
 

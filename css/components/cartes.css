@@ -5,38 +5,24 @@
 }
 
 .carte{
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 28px 24px;
-    overflow: hidden;
     color: var(--texte);
     text-decoration: none;
     background-color: var(--surface);
     border: 1px solid var(--bordure);
-    border-radius: 18px;
-    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
-}
-
-.carte::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top right, rgba(94, 224, 230, 0.15), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.35s;
-    pointer-events: none;
+    border-top: 3px solid var(--primaire);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(31, 36, 48, 0.04);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .carte:hover{
-    transform: translateY(-6px);
-    border-color: rgba(217, 162, 31, 0.5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.carte:hover::before{
-    opacity: 1;
+    transform: translateY(-4px);
+    border-top-color: var(--accent);
+    box-shadow: 0 14px 30px rgba(31, 36, 48, 0.1);
 }
 
 .carte-icone{
@@ -44,20 +30,21 @@
     place-items: center;
     width: 52px;
     height: 52px;
-    border-radius: 14px;
+    border-radius: 8px;
     font-size: 1.3rem;
-    color: var(--fond);
-    background: linear-gradient(135deg, var(--cyan), var(--rose));
-    transition: transform 0.35s;
+    color: var(--primaire);
+    background-color: var(--surface-2);
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .carte:hover .carte-icone{
-    transform: rotate(-8deg) scale(1.08);
+    color: var(--surface);
+    background-color: var(--primaire);
 }
 
 .carte h3{
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
 
 .carte p{
@@ -71,8 +58,8 @@
     align-items: center;
     gap: 8px;
     margin-top: auto;
-    font-weight: 700;
-    color: var(--or);
+    font-weight: 600;
+    color: var(--accent);
 }
 
 .carte-lien i{

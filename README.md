@@ -13,7 +13,7 @@ sae106/
 ├── page/                 Pages des onglets (onglet1.html à onglet4.html)
 ├── css/
 │   ├── style.css         Base commune : polices, couleurs, boutons, import des composants
-│   ├── components/       Header, footer, cartes, animations
+│   ├── components/       Header, footer, cartes, fil d'Ariane, animations
 │   └── pages/            Styles propres à une page (accueil, onglets, 404)
 ├── js/
 │   ├── main.js           Menu hamburger, page active, animations au défilement
@@ -64,7 +64,7 @@ Le site est hébergé sur un serveur **TrueNAS SCALE** grâce à **Portainer**, 
 
 ### 1. Installer Portainer sur TrueNAS SCALE
 
-1. Dans l'interface TrueNAS, aller dans **Apps** → **Discover Apps**.
+1. Dans l'interface TrueNAS, aller dans **Apps** > **Discover Apps**.
 2. Rechercher **Portainer** et cliquer sur **Install**.
 3. Garder la configuration par défaut (ou choisir un port web) puis valider.
 4. Une fois l'application démarrée, ouvrir l'interface web de Portainer et créer le compte administrateur.
@@ -72,7 +72,7 @@ Le site est hébergé sur un serveur **TrueNAS SCALE** grâce à **Portainer**, 
 ### 2. Créer la stack depuis le dépôt GitHub
 
 1. Dans Portainer, sélectionner l'environnement **local**.
-2. Aller dans **Stacks** → **Add stack**.
+2. Aller dans **Stacks** > **Add stack**.
 3. Nommer la stack, par exemple `sae106`.
 4. Choisir la méthode de build **Repository** et renseigner :
 
