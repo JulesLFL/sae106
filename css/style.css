@@ -4,7 +4,7 @@
 @import url("components/footer.css?v=3");
 @import url("components/cartes.css?v=3");
 @import url("components/fil-ariane.css?v=3");
-
+@import url("components/entreprises.css?v=3");
 :root{
     --header-height: 90px;
 
@@ -143,7 +143,7 @@ button:focus-visible{
 }
 
 .banniere-pointe{
-    background-color: #e74c3c;
+    background-color: #eee8e7;
     color: white;
     padding: 40px 15px 20px 15px;
     font-weight: bold;
@@ -159,6 +159,28 @@ button:focus-visible{
     justify-content: center;
     padding-bottom: 20px;
     box-sizing:border-box;
+}
+
+.cercle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 0 1px #ccc;
+    transition: transform 0.4s;
+    margin: 0 auto;
+}
+
+img.logo2{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 @media (max-width: 768px){

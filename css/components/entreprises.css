@@ -1,0 +1,183 @@
+.bandeaux-entreprises{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(28px, 6vw, 90px);    
+    align-items: stretch;
+    justify-items: center;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+
+.bandeau-entreprise{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 34px clamp(20px, 3vw, 34px) 64px;
+    text-align: center;
+    background-color: var(--surface);
+    border-top: 4px solid var(--or);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 50% 100%, 0 calc(100% - 30px));
+    filter: drop-shadow(0 12px 24px rgba(31, 58, 95, 0.12));
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.bandeau-entreprise:hover{
+    transform: translateY(-4px);
+    filter: drop-shadow(0 20px 34px rgba(31, 58, 95, 0.18));
+}
+
+
+.bandeau-logo{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 110px;
+    height: 110px;
+    padding: 16px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    box-shadow: 0 0 0 1px var(--bordure), 0 6px 16px rgba(31, 58, 95, 0.08);
+}
+
+.bandeau-logo i{
+    grid-area: 1 / 1;
+    font-size: 2.2rem;
+    color: var(--primaire);
+}
+
+.bandeau-logo img{
+    grid-area: 1 / 1;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    background-color: var(--surface);
+}
+
+
+.bandeau-nom{
+    margin: 6px 0 0;
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+}
+
+.bandeau-type{
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.bandeau-texte{
+    margin: 0;
+    color: var(--texte-doux);
+}
+
+.bandeau-sous-titre{
+    margin: 10px 0 0;
+    font-family: var(--police-texte);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--primaire);
+}
+
+
+.bandeau-infos{
+    list-style: none;
+    width: 100%;
+    max-width: 330px;
+    margin: 8px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.bandeau-infos li{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--texte-doux);
+}
+
+.bandeau-infos i{
+    flex: none;
+    width: 18px;
+    margin-top: 5px;
+    text-align: center;
+    color: var(--primaire);
+}
+
+.bandeau-infos a{
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s, border-color 0.25s;
+}
+
+.bandeau-infos a:hover{
+    color: var(--primaire);
+    border-bottom-color: currentColor;
+}
+
+
+.bandeau-liste{
+    width: 100%;
+    max-width: 330px;
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    font-size: 0.95rem;
+    text-align: left;
+    color: var(--texte-doux);
+}
+
+.bandeau-liste li{
+    position: relative;
+    padding-left: 20px;
+}
+
+.bandeau-liste li::before{
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--or);
+}
+
+
+.bandeau-entreprise .bouton{
+    margin-top: auto;
+}
+
+
+.onglet-intro{
+    max-width: 780px;
+    margin: 0 auto 44px;
+    text-align: center;
+    color: var(--texte-doux);
+}
+
+
+@media (max-width: 768px){
+    .bandeaux-entreprises{
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .bandeau-entreprise{
+        padding-bottom: 56px;
+    }
+}
