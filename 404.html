@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page introuvable – Site de la SAE 106">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="/source/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="/css/style.css?v=3" rel="stylesheet">
+    <link href="/css/pages/404.css?v=3" rel="stylesheet">
+    <title>404 - Page introuvable | SAE 106</title>
+    <script src="/js/404.js?v=3" defer></script>
+</head>
+
+<body class="page-erreur">
+    <div class="etoiles" aria-hidden="true"></div>
+    <div class="etoile-filante" aria-hidden="true"></div>
+    <div class="sol" aria-hidden="true"></div>
+
+    <main class="erreur">
+        <button class="astronaute" id="astronaute" type="button" aria-label="Pousser l'astronaute">
+            <i class="fa-solid fa-user-astronaut" aria-hidden="true"></i>
+        </button>
+
+        <h1 class="glitch" data-texte="404">404</h1>
+
+        <p class="erreur-titre">Houston, on a un problème…</p>
+        <p class="erreur-texte">La page que tu cherches a dérivé quelque part dans l'espace. Elle a peut-être été déplacée, supprimée, ou n'a jamais existé.</p>
+
+        <div class="terminal">
+            <div class="terminal-barre" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>terminal - sae106</p>
+            </div>
+            <pre class="terminal-contenu" id="terminal">&gt; Erreur 404 : page introuvable</pre>
+        </div>
+
+        <div class="actions">
+            <a class="bouton" href="/">
+                <i class="fa-solid fa-house" aria-hidden="true"></i>
+                Retour à l'accueil
+            </a>
+            <button class="bouton bouton-secondaire" id="retour" type="button">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                Page précédente
+            </button>
+        </div>
+
+        <p class="compteur" id="compteur" aria-live="polite"></p>
+    </main>
+</body>
+
+</html>

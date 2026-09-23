@@ -1,0 +1,62 @@
+@keyframes descente{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes fondu-haut{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotter{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes degrade-anime{
+    from{
+        background-position: 0% 50%;
+    }
+    to{
+        background-position: 200% 50%;
+    }
+}
+
+.js .apparition{
+    opacity: 0;
+}
+
+.js .apparition.visible{
+    opacity: 1;
+    animation: fondu-haut 0.7s ease backwards;
+    animation-delay: calc(var(--delai, 0) * 0.1s);
+}
+
+@media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .js .apparition{
+        opacity: 1;
+    }
+}

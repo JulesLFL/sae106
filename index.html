@@ -3,14 +3,104 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="css/style.css" rel="stylesheet">
-    <title>Mon site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
+    <link rel="icon" href="source/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="css/style.css?v=3" rel="stylesheet">
+    <link href="css/pages/index.css?v=3" rel="stylesheet">
+    <title>SAE 106 - IUT de Maubeuge</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="js/main.js?v=3" defer></script>
 </head>
 
 <body>
     <header>
-        <img class ="logo" src="source/logo.png" alt="Logo de l'IUT de maubeuge">
+        <a class="marque" href="index.html">
+            <img class="logo" src="source/logo.png" alt="Logo de l'IUT de Maubeuge">
+            <span>SAE 106</span>
+        </a>
+        <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="page/onglet1.html" class="navi">Onglet1</a></li>
+                <li><a href="page/onglet2.html" class="navi">Onglet2</a></li>
+                <li><a href="page/onglet3.html" class="navi">Onglet3</a></li>
+                <li><a href="page/onglet4.html" class="navi">Onglet4</a></li>
+            </ul>
+        </nav>
     </header>
+<<<<<<< HEAD
     <img class="pres" src="source/imgpres.png" alt="Image de présentation">
+=======
+
+    <main>
+        <section class="hero">
+            <img class="bandeau" src="source/imgpres.png" alt="Bannière de la SAE 106">
+        </section>
+
+        <section class="intro apparition">
+            <h1 class="titre-page">Bienvenue sur le site de la SAE 106</h1>
+            <p>Projet réalisé à l'IUT de Maubeuge (UPHF). Découvre les différentes parties du site grâce aux onglets ci-dessous.</p>
+            <div class="actions">
+                <a class="bouton" href="page/onglet1.html">
+                    <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                    Commencer la visite
+                </a>
+                <a class="bouton bouton-secondaire" href="https://github.com/JulesLFL/sae106">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    Voir le code
+                </a>
+            </div>
+        </section>
+
+        <section aria-labelledby="titre-onglets">
+            <h2 id="titre-onglets" class="section-titre apparition">Les onglets</h2>
+            <div class="grille-cartes">
+                <a class="carte apparition" style="--delai: 1" href="page/onglet1.html">
+                    <span class="carte-icone"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
+                    <h3>Onglet1</h3>
+                    <p>Description de l'onglet 1 à compléter.</p>
+                    <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </a>
+                <a class="carte apparition" style="--delai: 2" href="page/onglet2.html">
+                    <span class="carte-icone"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+                    <h3>Onglet2</h3>
+                    <p>Description de l'onglet 2 à compléter.</p>
+                    <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </a>
+                <a class="carte apparition" style="--delai: 3" href="page/onglet3.html">
+                    <span class="carte-icone"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+                    <h3>Onglet3</h3>
+                    <p>Description de l'onglet 3 à compléter.</p>
+                    <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </a>
+                <a class="carte apparition" style="--delai: 4" href="page/onglet4.html">
+                    <span class="carte-icone"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                    <h3>Onglet4</h3>
+                    <p>Description de l'onglet 4 à compléter.</p>
+                    <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="liens-footer">
+            <a href="https://github.com/JulesLFL/sae106" aria-label="Dépôt GitHub du projet">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.uphf.fr" aria-label="Site de l'UPHF">
+                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+            </a>
+        </div>
+        <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
+    </footer>
+>>>>>>> 4d95abeeca0a6bf961c1ac4c379a381cf25999a2
 </body>
+
 </html>

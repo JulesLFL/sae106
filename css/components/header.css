@@ -1,0 +1,192 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 100;
+    padding: 0 clamp(16px, 4vw, 48px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--bordure);
+    transition: box-shadow 0.3s;
+    animation: descente 0.6s ease both;
+}
+
+header::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--primaire);
+}
+
+header.defile{
+    box-shadow: 0 6px 20px rgba(31, 36, 48, 0.08);
+}
+
+.marque{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--police-titre);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primaire);
+    text-decoration: none;
+}
+
+img.logo{
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 0 1px var(--bordure);
+    transition: transform 0.4s;
+}
+
+.marque:hover img.logo{
+    transform: scale(1.05);
+}
+
+header nav ul{
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a.navi{
+    position: relative;
+    display: block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--texte);
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+a.navi::after{
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 6px;
+    height: 2px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+}
+
+a.navi:hover,
+a.navi:focus-visible{
+    color: var(--primaire);
+}
+
+a.navi:hover::after,
+a.navi:focus-visible::after{
+    transform: scaleX(1);
+}
+
+a.navi[aria-current="page"]{
+    color: var(--surface);
+    background-color: var(--primaire);
+}
+
+a.navi[aria-current="page"]::after{
+    display: none;
+}
+
+.burger{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 36px;
+    height: 26px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span{
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: var(--primaire);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+header.menu-ouvert .burger span:nth-child(1){
+    transform: translateY(11px) rotate(45deg);
+}
+
+header.menu-ouvert .burger span:nth-child(2){
+    opacity: 0;
+}
+
+header.menu-ouvert .burger span:nth-child(3){
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+@media (max-width: 768px){
+    img.logo{
+        width: 48px;
+        height: 48px;
+    }
+
+    .burger{
+        display: flex;
+    }
+
+    header nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 12px 16px 20px;
+        background-color: var(--surface);
+        border-bottom: 1px solid var(--bordure);
+        box-shadow: 0 10px 20px rgba(31, 36, 48, 0.08);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+    }
+
+    header.menu-ouvert nav{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    header nav ul{
+        flex-direction: column;
+    }
+
+    a.navi{
+        padding: 14px 16px;
+    }
+
+    a.navi::after{
+        bottom: 8px;
+    }
+}
+
+@media (max-width: 360px){
+    .marque span{
+        display: none;
+    }
+}

@@ -1,11 +1,30 @@
-img.logo{
-    width: 125px;
-    height:auto;
-    border-radius: 50%;
-    overflow:hidden;
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap");
+@import url("components/animations.css?v=3");
+@import url("components/header.css?v=3");
+@import url("components/footer.css?v=3");
+@import url("components/cartes.css?v=3");
+@import url("components/fil-ariane.css?v=3");
 
+:root{
+    --header-height: 90px;
+
+    --fond: #f7f5f0;
+    --surface: #ffffff;
+    --surface-2: #efebe3;
+    --texte: #1f2430;
+    --texte-doux: #5a6070;
+    --bordure: #e2ddd2;
+
+    --primaire: #1f3a5f;
+    --primaire-fonce: #152a45;
+    --accent: #1a93b3;
+    --or: #b8892b;
+
+    --police-titre: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    --police-texte: "Source Sans 3", "Segoe UI", Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 header{
     position:fixed;
     width: 100%;
@@ -14,9 +33,128 @@ header{
     z-index: 10;
     background: linear-gradient(to right ,black, grey, lightgrey);
     padding: 15px 30px;
+=======
+*,
+*::before,
+*::after{
+>>>>>>> 4d95abeeca0a6bf961c1ac4c379a381cf25999a2
     box-sizing: border-box;
+}
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body{
+    margin: 0;
+    padding-top: var(--header-height);
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    font-family: var(--police-texte);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--texte);
+    background-color: var(--fond);
+}
+
+main{
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px clamp(16px, 4vw, 32px) 0;
+}
+
+h1,
+h2,
+h3{
+    font-family: var(--police-titre);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--primaire);
+}
+
+.titre-page{
+    position: relative;
+    padding-bottom: 16px;
+}
+
+.titre-page::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 64px;
+    height: 3px;
+    background-color: var(--or);
+    transform: translateX(-50%);
+}
+
+.section-titre{
+    position: relative;
+    margin: 0 0 28px;
+    padding-bottom: 10px;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    border-bottom: 1px solid var(--bordure);
+}
+
+.section-titre::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 64px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.bouton{
+    display: inline-flex;
     align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: 1px solid var(--primaire);
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--surface);
+    background-color: var(--primaire);
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.bouton:hover{
+    transform: translateY(-2px);
+    background-color: var(--primaire-fonce);
+    box-shadow: 0 8px 20px rgba(31, 58, 95, 0.2);
+}
+
+.bouton-secondaire{
+    color: var(--primaire);
+    background-color: transparent;
+}
+
+.bouton-secondaire:hover{
+    color: var(--surface);
+    background-color: var(--primaire);
+}
+
+a:focus-visible,
+button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+::selection{
+    color: var(--surface);
+    background-color: var(--primaire);
+}
+
+@media (max-width: 768px){
+    :root{
+        --header-height: 72px;
+    }
 }

@@ -1,0 +1,43 @@
+.hero{
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--bordure);
+    box-shadow: 0 16px 40px rgba(31, 36, 48, 0.12);
+    animation: fondu-haut 0.8s ease both;
+}
+
+img.bandeau{
+    display: block;
+    width: 100%;
+    height: clamp(200px, 40vw, 420px);
+    object-fit: cover;
+    transition: transform 6s ease;
+}
+
+.hero:hover img.bandeau{
+    transform: scale(1.03);
+}
+
+.intro{
+    max-width: 720px;
+    margin: 64px auto;
+    text-align: center;
+}
+
+.intro h1{
+    margin: 0 0 20px;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+}
+
+.intro p{
+    margin: 0 0 28px;
+    font-size: 1.15rem;
+    color: var(--texte-doux);
+}
+
+.actions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
