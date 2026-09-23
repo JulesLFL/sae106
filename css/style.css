@@ -153,6 +153,25 @@ button:focus-visible{
     background-color: var(--primaire);
 }
 
+.banniere-pointe{
+    background-color: #e74c3c;
+    color: white;
+    padding: 40px 15px 20px 15px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    clip-path: polygon(0 0,100% 0, 100% calc(100% - 20px),50% 100%,0 calc(100% - 20px));
+    
+    margin: 0 auto;
+
+    width: 200px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    box-sizing:border-box;
+}
+
 @media (max-width: 768px){
     :root{
         --header-height: 72px;
