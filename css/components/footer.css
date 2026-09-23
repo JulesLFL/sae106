@@ -1,0 +1,38 @@
+footer{
+    margin-top: 80px;
+    padding: 32px 16px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--texte-doux);
+    background-color: var(--surface);
+    border-top: 1px solid var(--bordure);
+}
+
+.liens-footer{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.liens-footer a{
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    color: var(--texte);
+    background-color: var(--surface-2);
+    transition: transform 0.3s, color 0.3s, background-color 0.3s;
+}
+
+.liens-footer a:hover{
+    transform: translateY(-4px);
+    color: var(--fond);
+    background-color: var(--or);
+}
+
+footer p{
+    margin: 0;
+}

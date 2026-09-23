@@ -1,0 +1,84 @@
+.grille-cartes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.carte{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px 24px;
+    overflow: hidden;
+    color: var(--texte);
+    text-decoration: none;
+    background-color: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: 18px;
+    transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+
+.carte::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(94, 224, 230, 0.15), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.35s;
+    pointer-events: none;
+}
+
+.carte:hover{
+    transform: translateY(-6px);
+    border-color: rgba(217, 162, 31, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.carte:hover::before{
+    opacity: 1;
+}
+
+.carte-icone{
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 1.3rem;
+    color: var(--fond);
+    background: linear-gradient(135deg, var(--cyan), var(--rose));
+    transition: transform 0.35s;
+}
+
+.carte:hover .carte-icone{
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.carte h3{
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.carte p{
+    margin: 0;
+    line-height: 1.5;
+    color: var(--texte-doux);
+}
+
+.carte-lien{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    font-weight: 700;
+    color: var(--or);
+}
+
+.carte-lien i{
+    transition: transform 0.3s;
+}
+
+.carte:hover .carte-lien i{
+    transform: translateX(4px);
+}

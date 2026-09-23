@@ -40,6 +40,34 @@ function afficherAnnee() {
     }
 }
 
+function surveillerDefilement() {
+    header.classList.toggle("defile", window.scrollY > 10);
+}
+
+function animerApparitions() {
+    const elements = document.querySelectorAll(".apparition");
+
+    if (!("IntersectionObserver" in window)) {
+        elements.forEach(function (element) {
+            element.classList.add("visible");
+        });
+        return;
+    }
+
+    const observateur = new IntersectionObserver(function (entrees) {
+        entrees.forEach(function (entree) {
+            if (entree.isIntersecting) {
+                entree.target.classList.add("visible");
+                observateur.unobserve(entree.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    elements.forEach(function (element) {
+        observateur.observe(element);
+    });
+}
+
 burger.addEventListener("click", basculerMenu);
 
 liensMenu.forEach(function (lien) {
@@ -58,5 +86,9 @@ window.addEventListener("resize", function () {
     }
 });
 
+window.addEventListener("scroll", surveillerDefilement, { passive: true });
+
 marquerPageActive();
 afficherAnnee();
+surveillerDefilement();
+animerApparitions();

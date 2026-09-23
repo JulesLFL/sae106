@@ -1,7 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap");
+@import url("components/animations.css");
+@import url("components/header.css");
+@import url("components/footer.css");
+@import url("components/cartes.css");
+
 :root{
-    --header-height: 155px;
-    --couleur-fond-header: black;
-    --couleur-texte-header: white;
+    --header-height: 90px;
+
+    --fond: #0e0c09;
+    --surface: #1a1712;
+    --surface-2: #25201a;
+    --texte: #f4efe6;
+    --texte-doux: #b9b0a0;
+    --bordure: rgba(255, 255, 255, 0.08);
+
+    --or: #d9a21f;
+    --cyan: #5ee0e6;
+    --rose: #e3a8f0;
+
+    --police-titre: "Bungee", "Arial Black", sans-serif;
+    --police-texte: "Space Grotesk", Arial, Helvetica, sans-serif;
+    --police-mono: "Space Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
 }
 
 html{
@@ -15,25 +40,91 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--police-texte);
+    line-height: 1.6;
+    color: var(--texte);
+    background:
+        radial-gradient(circle at 10% 0%, rgba(94, 224, 230, 0.08), transparent 40%),
+        radial-gradient(circle at 90% 30%, rgba(217, 162, 31, 0.08), transparent 40%),
+        var(--fond);
+    background-attachment: fixed;
 }
 
 main{
     flex: 1;
-    padding: 0 30px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px clamp(16px, 4vw, 32px) 0;
 }
 
-footer{
-    text-align: center;
-    padding: 20px;
+h1,
+h2,
+h3{
+    font-family: var(--police-titre);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.titre-degrade{
+    background: linear-gradient(90deg, var(--cyan), var(--rose), var(--or), var(--cyan));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: degrade-anime 6s linear infinite;
+}
+
+.section-titre{
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 0 24px;
+}
+
+.bouton{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--fond);
+    background-color: var(--or);
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.bouton:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(217, 162, 31, 0.35);
+}
+
+.bouton-secondaire{
+    color: var(--texte);
+    background-color: transparent;
+    border-color: var(--bordure);
+}
+
+.bouton-secondaire:hover{
+    border-color: var(--cyan);
+    box-shadow: 0 10px 25px rgba(94, 224, 230, 0.2);
+}
+
+a:focus-visible,
+button:focus-visible{
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+::selection{
+    color: var(--fond);
+    background-color: var(--rose);
 }
 
 @media (max-width: 768px){
     :root{
-        --header-height: 100px;
-    }
-
-    main{
-        padding: 0 16px;
+        --header-height: 72px;
     }
 }

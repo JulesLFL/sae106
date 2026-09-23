@@ -9,13 +9,17 @@ Le site est servi par un conteneur **nginx** (image `nginx:alpine`) et exposé s
 ```
 sae106/
 ├── index.html            Page d'accueil
+├── 404.html              Page d'erreur personnalisée
 ├── page/                 Pages des onglets (onglet1.html à onglet4.html)
 ├── css/
-│   ├── style.css         Styles de base communs à toutes les pages
-│   ├── components/       Styles des éléments partagés (header, menu)
-│   └── pages/            Styles propres à une page
-├── js/main.js            Menu hamburger, page active, année du footer
+│   ├── style.css         Base commune : polices, couleurs, boutons, import des composants
+│   ├── components/       Header, footer, cartes, animations
+│   └── pages/            Styles propres à une page (accueil, onglets, 404)
+├── js/
+│   ├── main.js           Menu hamburger, page active, animations au défilement
+│   └── 404.js            Étoiles, terminal animé et astronaute de la page 404
 ├── source/               Images (logo, bannière)
+├── nginx/default.conf    Configuration nginx (page 404, cache)
 ├── Dockerfile            Image nginx contenant le site
 ├── docker-compose.yml    Service "site" exposé sur le port 30080
 └── .dockerignore         Fichiers exclus de l'image
@@ -52,7 +56,7 @@ docker compose down
 
 ### Sans Docker
 
-Le site étant entièrement statique, il est aussi possible d'ouvrir directement `index.html` dans un navigateur.
+Le site étant entièrement statique, il est aussi possible d'ouvrir directement `index.html` dans un navigateur. La page 404 personnalisée ne fonctionne qu'avec nginx (Docker).
 
 ## Hébergement sur TrueNAS SCALE avec Portainer
 
