@@ -1,0 +1,363 @@
+/* ==========================================================================
+   Page Écologie — alignée sur le style de "Notre approche"
+   ========================================================================== */
+
+/* --- Intro en carte blanche ---------------------------------------------- */
+
+.eco-intro{
+    max-width: 780px;
+    margin: 0 auto 56px;
+    padding: 26px 32px;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--texte-doux);
+    background-color: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -18px rgba(31, 58, 95, 0.2);
+}
+
+/* --- Sections ------------------------------------------------------------- */
+
+.eco-section{
+    margin-bottom: 64px;
+}
+
+/* ==========================================================================
+   TABLEAU COMPARATIF
+   ========================================================================== */
+
+.tableau-wrapper{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px;
+    background-color: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px -18px rgba(31, 58, 95, 0.2);
+}
+
+.tableau-comparatif{
+    width: 100%;
+    min-width: 700px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.96rem;
+}
+
+.tableau-comparatif caption{
+    padding: 8px 16px 20px;
+    font-family: var(--police-titre);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primaire);
+    text-align: left;
+}
+
+/* En-tête */
+.tableau-comparatif thead th{
+    padding: 14px 20px;
+    font-family: var(--police-texte);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--texte-doux);
+    background-color: var(--surface-2);
+    border-bottom: 2px solid var(--bordure);
+}
+
+.tableau-comparatif thead th:first-child{
+    border-top-left-radius: 10px;
+    width: 20%;
+}
+
+.tableau-comparatif thead th:last-child{
+    border-top-right-radius: 10px;
+}
+
+.tableau-comparatif thead th:nth-child(2){
+    color: var(--primaire);
+}
+
+.tableau-comparatif thead th:nth-child(3){
+    color: var(--accent);
+}
+
+/* Critère (colonne de gauche) */
+.tableau-comparatif tbody th{
+    padding: 20px 20px;
+    font-family: var(--police-texte);
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--primaire);
+    background-color: var(--surface-2);
+    border-bottom: 1px solid var(--bordure);
+    border-right: 1px solid var(--bordure);
+    vertical-align: top;
+    position: relative;
+}
+
+.tableau-comparatif tbody th::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22px;
+    bottom: 22px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background-color: var(--or);
+}
+
+/* Cellules de données */
+.tableau-comparatif tbody td{
+    padding: 20px 22px;
+    vertical-align: top;
+    line-height: 1.65;
+    color: var(--texte-doux);
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--bordure);
+    transition: background-color 0.2s ease;
+}
+
+.tableau-comparatif tbody td + td{
+    border-left: 1px solid var(--bordure);
+}
+
+.tableau-comparatif tbody tr:hover td{
+    background-color: rgba(26, 147, 179, 0.04);
+}
+
+.tableau-comparatif tbody tr:last-child th,
+.tableau-comparatif tbody tr:last-child td{
+    border-bottom: none;
+}
+
+.tableau-comparatif td strong{
+    color: var(--primaire);
+    font-weight: 700;
+}
+
+/* Tags */
+.tableau-comparatif .tag{
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 6px 4px 0 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    background-color: rgba(26, 147, 179, 0.12);
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   CARTE MENTALE — même langage que "Notre approche"
+   ========================================================================== */
+
+.carte-mentale{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+/* Cercle central bleu foncé */
+.cm-central{
+    display: grid;
+    place-items: center;
+    width: 220px;
+    height: 220px;
+    padding: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #2c5282 0%, var(--primaire-fonce) 100%);
+    color: var(--surface);
+    font-family: var(--police-titre);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.4;
+    box-shadow:
+        0 18px 40px -20px rgba(31, 58, 95, 0.55),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+    justify-self: center;
+}
+
+/* Colonnes de cartes */
+.cm-colonne{
+    display: grid;
+    gap: 22px;
+}
+
+/* Carte d'une branche */
+.cm-branche{
+    padding: 18px 20px 20px;
+    background-color: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -18px rgba(31, 58, 95, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cm-branche:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px -18px rgba(31, 58, 95, 0.35);
+}
+
+.cm-branche h3{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 14px;
+    padding-bottom: 12px;
+    font-family: var(--police-texte);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primaire);
+    border-bottom: 1px solid var(--bordure);
+}
+
+.cm-branche h3 i{
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: rgba(26, 147, 179, 0.12);
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+
+.cm-branche ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+    font-size: 0.93rem;
+    color: var(--texte-doux);
+}
+
+.cm-branche li{
+    position: relative;
+    padding-left: 18px;
+    line-height: 1.5;
+}
+
+.cm-branche li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--or);
+}
+
+/* ==========================================================================
+   SOURCES
+   ========================================================================== */
+
+.sources{
+    padding: 28px 32px;
+    background-color: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -18px rgba(31, 58, 95, 0.2);
+}
+
+.sources .section-titre{
+    margin-top: 0;
+}
+
+.sources ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    color: var(--texte-doux);
+    font-size: 0.96rem;
+}
+
+.sources li{
+    position: relative;
+    padding-left: 22px;
+    line-height: 1.6;
+}
+
+.sources li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--or);
+}
+
+.sources a{
+    color: var(--primaire);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.25s, border-color 0.25s;
+}
+
+.sources a:hover{
+    color: var(--accent);
+    border-bottom-color: currentColor;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px){
+    .carte-mentale{
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .cm-central{
+        width: 180px;
+        height: 180px;
+        font-size: 0.92rem;
+    }
+
+    .cm-colonne{
+        gap: 18px;
+    }
+}
+
+@media (max-width: 768px){
+    .eco-intro{
+        padding: 22px 22px;
+        margin-bottom: 44px;
+    }
+
+    .eco-section{
+        margin-bottom: 48px;
+    }
+
+    .tableau-comparatif thead th,
+    .tableau-comparatif tbody th,
+    .tableau-comparatif tbody td{
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+
+    .sources{
+        padding: 22px 22px;
+    }
+}
