@@ -24,16 +24,6 @@
     --police-texte: "Source Sans 3", "Segoe UI", Arial, sans-serif;
 }
 
-
-header{
-    position:fixed;
-    width: 100%;
-    top:0;
-    left: 0;
-    z-index: 10;
-    background: linear-gradient(to right ,black, grey, lightgrey);
-    padding: 15px 30px;
-}
 *,
 *::before,
 *::after{
