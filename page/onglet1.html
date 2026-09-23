@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="../css/style.css?v=3" rel="stylesheet">
     <link href="../css/pages/onglet.css?v=3" rel="stylesheet">
+    <link href="../css/pages/brainstorming.css?v=3" rel="stylesheet">
     <title>Notre approche - SAE 106</title>
     <script>document.documentElement.classList.add("js");</script>
     <script src="../js/main.js?v=3" defer></script>
@@ -51,12 +52,80 @@
         <section class="entete-page apparition">
             <div class="entete-icone"><i class="fa-solid fa-compass" aria-hidden="true"></i></div>
             <h1 class="titre-page">Notre approche</h1>
-            <p>La page "Notre approche" fonctionne !</p>
+            <p>Le brainstorming de l'équipe : toutes nos idées de départ, puis celles que nous avons retenues.</p>
+            <ul class="infos-seance">
+                <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Date : à compléter</li>
+                <li><i class="fa-solid fa-users" aria-hidden="true"></i> Participants : à compléter</li>
+                <li><i class="fa-solid fa-clock" aria-hidden="true"></i> Durée : à compléter</li>
+            </ul>
+        </section>
+
+        <section class="bloc" aria-labelledby="titre-carte">
+            <h2 id="titre-carte" class="section-titre apparition">La carte des idées</h2>
+            <div class="carte-mentale">
+                <div class="sujet apparition">
+                    <span class="sujet-label">Question de départ</span>
+                    <p>Question ou sujet du brainstorming à compléter</p>
+                </div>
+                <article class="branche apparition" style="--delai: 1; --couleur: var(--primaire)">
+                    <h3><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectifs</h3>
+                    <ul class="idees">
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                    </ul>
+                </article>
+                <article class="branche apparition" style="--delai: 2; --couleur: var(--accent)">
+                    <h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Idées</h3>
+                    <ul class="idees">
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                    </ul>
+                </article>
+                <article class="branche apparition" style="--delai: 3; --couleur: var(--or)">
+                    <h3><i class="fa-solid fa-wrench" aria-hidden="true"></i> Moyens</h3>
+                    <ul class="idees">
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                    </ul>
+                </article>
+                <article class="branche apparition" style="--delai: 4; --couleur: var(--vert)">
+                    <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Contraintes</h3>
+                    <ul class="idees">
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                        <li>Idée à compléter</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="bloc" aria-labelledby="titre-retenues">
+            <h2 id="titre-retenues" class="section-titre apparition">Les idées retenues</h2>
+            <ol class="retenues">
+                <li class="apparition" style="--delai: 1">
+                    <h3>Idée retenue à compléter</h3>
+                    <p>Pourquoi nous l'avons choisie : à compléter.</p>
+                </li>
+                <li class="apparition" style="--delai: 2">
+                    <h3>Idée retenue à compléter</h3>
+                    <p>Pourquoi nous l'avons choisie : à compléter.</p>
+                </li>
+                <li class="apparition" style="--delai: 3">
+                    <h3>Idée retenue à compléter</h3>
+                    <p>Pourquoi nous l'avons choisie : à compléter.</p>
+                </li>
+            </ol>
+        </section>
+
+        <div class="retour apparition">
             <a class="bouton bouton-secondaire" href="../index.html">
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                 Retour à l'accueil
             </a>
-        </section>
+        </div>
     </main>
 
     <footer>
