@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap");
-@import url("components/animations.css");
-@import url("components/header.css");
-@import url("components/footer.css");
-@import url("components/cartes.css");
+@import url("components/animations.css?v=2");
+@import url("components/header.css?v=2");
+@import url("components/footer.css?v=2");
+@import url("components/cartes.css?v=2");
 
 :root{
     --header-height: 90px;
