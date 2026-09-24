@@ -8,7 +8,7 @@
     <link rel="icon" href="../source/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="../css/style.css?v=4" rel="stylesheet">
-    <link href="../css/pages/onglet.css?v=4" rel="stylesheet">
+    <link href="../css/pages/ecologie.css?v=4" rel="stylesheet">
     <title>Écologie - SAE 106</title>
     <script>document.documentElement.classList.add("js");</script>
     <script src="../js/main.js?v=4" defer></script>
@@ -27,6 +27,7 @@
         </button>
         <nav id="menu" aria-label="Menu principal">
             <ul>
+                <li><a href="../index.html" class="navi">Organisations</a></li>
                 <li><a href="onglet1.html" class="navi">Notre approche</a></li>
                 <li><a href="onglet2.html" class="navi">Écologie</a></li>
                 <li><a href="onglet3.html" class="navi">Charte numérique</a></li>
@@ -38,24 +39,169 @@
     <main>
         <nav class="fil-ariane" aria-label="Fil d'Ariane">
             <ol>
-                <li>
-                    <a href="../index.html">
-                        <i class="fa-solid fa-house" aria-hidden="true"></i>
-                        Accueil
-                    </a>
-                </li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li aria-current="page">Écologie</li>
             </ol>
         </nav>
 
-        <section class="entete-page apparition">
-            <div class="entete-icone"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
-            <h1 class="titre-page">Écologie</h1>
-            <p>La page "Écologie" fonctionne !</p>
-            <a class="bouton bouton-secondaire" href="../index.html">
-                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                Retour à l'accueil
-            </a>
+        <h1 class="titre-page">Empreinte écologique</h1>
+
+        <p class="eco-intro apparition">
+            Cette partie compare les actions mises en œuvre par <strong>Vallourec</strong> et <strong>MCA</strong>
+            pour réduire leur empreinte environnementale. Une carte mentale vient ensuite compléter cette
+            analyse avec d'autres pistes possibles et les sources utilisées.
+        </p>
+
+        <!-- ============ Tableau comparatif ============ -->
+        <section class="eco-section apparition" aria-labelledby="titre-tableau">
+            <h2 id="titre-tableau" class="section-titre">Tableau comparatif des actions</h2>
+
+            <div class="tableau-wrapper">
+                <table class="tableau-comparatif">
+                    <caption>Comparaison des engagements environnementaux</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Critère</th>
+                            <th scope="col">Vallourec</th>
+                            <th scope="col">MCA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Énergie</th>
+                            <td>
+                                <strong>Transition énergétique</strong> : solutions pour l'hydrogène bas
+                                carbone, la géothermie et le captage du CO<sub>2</sub>.
+                                <span class="tag">Hydrogène</span><span class="tag">Géothermie</span>
+                            </td>
+                            <td>
+                                Optimisation des consommations électriques des ateliers et recours
+                                progressif aux énergies renouvelables.
+                                <span class="tag">Sobriété</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Émissions</th>
+                            <td>
+                                Objectifs de réduction des émissions de gaz à effet de serre validés par
+                                l'initiative <strong>SBTi</strong> (trajectoire alignée sur l'Accord de Paris).
+                            </td>
+                            <td>
+                                Suivi et réduction des émissions liées aux procédés industriels et aux
+                                déplacements.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Matières &amp; recyclage</th>
+                            <td>
+                                Recyclage de l'acier, réemploi des tubes et <strong>éco-conception</strong>
+                                des produits tubulaires.
+                            </td>
+                            <td>
+                                Valorisation des chutes de production, tri sélectif et recherche de
+                                matériaux recyclés.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Eau &amp; déchets</th>
+                            <td>
+                                Réduction des prélèvements en eau sur les sites industriels et traitement
+                                des effluents avant rejet.
+                            </td>
+                            <td>
+                                Gestion raisonnée de l'eau dans les procédés et traitement des déchets
+                                industriels.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Transport</th>
+                            <td>
+                                Optimisation des flux logistiques et rapprochement des sites de
+                                production des zones de consommation.
+                            </td>
+                            <td>
+                                Rationalisation des livraisons et priorité aux circuits courts avec les
+                                partenaires locaux.
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ancrage local</th>
+                            <td>
+                                Implantation historique dans le <strong>bassin de la Sambre</strong>,
+                                sous-traitance et apprentissage locaux.
+                            </td>
+                            <td>
+                                Entreprise implantée à <strong>Maubeuge</strong>, contribuant à l'emploi
+                                et au tissu industriel du Val de Sambre.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ============ Carte mentale ============ -->
+        <section class="eco-section apparition" aria-labelledby="titre-carte-mentale">
+            <h2 id="titre-carte-mentale" class="section-titre">Carte mentale : d'autres pistes possibles</h2>
+
+            <div class="carte-mentale">
+                <!-- Colonne gauche -->
+                <div class="cm-colonne">
+                    <div class="cm-branche">
+                        <h3><i class="fa-solid fa-bolt" aria-hidden="true"></i> Énergie</h3>
+                        <ul>
+                            <li>Électricité d'origine renouvelable.</li>
+                            <li>Panneaux photovoltaïques en toiture.</li>
+                            <li>Audit énergétique régulier.</li>
+                        </ul>
+                    </div>
+                    <div class="cm-branche">
+                        <h3><i class="fa-solid fa-truck" aria-hidden="true"></i> Transport</h3>
+                        <ul>
+                            <li>Privilégier le rail et le fluvial.</li>
+                            <li>Covoiturage et mobilités douces.</li>
+                            <li>Limiter les déplacements non essentiels.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cercle central -->
+                <div class="cm-central">
+                    Réduire l'impact écologique
+                </div>
+
+                <!-- Colonne droite -->
+                <div class="cm-colonne">
+                    <div class="cm-branche">
+                        <h3><i class="fa-solid fa-recycle" aria-hidden="true"></i> Matières</h3>
+                        <ul>
+                            <li>Matériaux recyclés ou biosourcés.</li>
+                            <li>Politique de tri et de réemploi.</li>
+                            <li>Réparer plutôt que remplacer.</li>
+                        </ul>
+                    </div>
+                    <div class="cm-branche">
+                        <h3><i class="fa-solid fa-leaf" aria-hidden="true"></i> Achats &amp; numérique</h3>
+                        <ul>
+                            <li>Fournisseurs locaux et labellisés.</li>
+                            <li>Allonger la durée de vie du matériel.</li>
+                            <li>Réduire le poids des fichiers.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Sources ============ -->
+        <section class="sources apparition" aria-labelledby="titre-sources">
+            <h2 id="titre-sources" class="section-titre">Sources documentaires</h2>
+            <ul>
+                <li>Rapport annuel et documentation RSE de <a href="https://www.vallourec.com" target="_blank" rel="noopener">Vallourec</a>.</li>
+                <li>Documentation officielle de <strong>MCA</strong>.</li>
+                <li>ADEME &mdash; <a href="https://www.ademe.fr" target="_blank" rel="noopener">ademe.fr</a> : guides sur l'empreinte carbone.</li>
+                <li>Ministère de la Transition écologique &mdash; <a href="https://www.ecologie.gouv.fr" target="_blank" rel="noopener">ecologie.gouv.fr</a>.</li>
+                <li>Science Based Targets initiative (SBTi) &mdash; <a href="https://sciencebasedtargets.org" target="_blank" rel="noopener">sciencebasedtargets.org</a>.</li>
+            </ul>
         </section>
     </main>
 

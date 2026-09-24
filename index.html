@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
+    <meta name="description" content="Onglet 1 - Les organisations de Maubeuge et du Val de Sambre - SAE 106 IUT de Maubeuge (UPHF)">
     <link rel="icon" href="source/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="css/style.css?v=4" rel="stylesheet">
     <link href="css/pages/index.css?v=4" rel="stylesheet">
-    <title>SAE 106 - IUT de Maubeuge</title>
+    <title>Organisations - SAE 106 - IUT de Maubeuge</title>
     <script>document.documentElement.classList.add("js");</script>
     <script src="js/main.js?v=4" defer></script>
 </head>
@@ -27,6 +27,7 @@
         </button>
         <nav id="menu" aria-label="Menu principal">
             <ul>
+                <li><a href="index.html" class="navi">Organisations</a></li>
                 <li><a href="page/onglet1.html" class="navi">Notre approche</a></li>
                 <li><a href="page/onglet2.html" class="navi">Écologie</a></li>
                 <li><a href="page/onglet3.html" class="navi">Charte numérique</a></li>
@@ -41,28 +42,123 @@
         </section>
 
         <section class="intro apparition">
-            <h1 class="titre-page">Bienvenue sur le site de la SAE 106</h1>
-            <p>Projet réalisé à l'IUT de Maubeuge (UPHF). Découvre les différentes parties du site grâce aux onglets ci-dessous.</p>
-            <div class="actions">
-                <a class="bouton" href="page/onglet1.html">
-                    <i class="fa-solid fa-rocket" aria-hidden="true"></i>
-                    Commencer la visite
-                </a>
-                <a class="bouton bouton-secondaire" href="https://github.com/JulesLFL/sae106">
-                    <i class="fa-brands fa-github" aria-hidden="true"></i>
-                    Voir le code
-                </a>
+            <h1 class="titre-page">Les organisations</h1>
+            <p class="onglet-intro">
+                Cette première partie présente deux organisations implantées à Maubeuge et dans le Val de Sambre.
+                Pour chacune d'elles, on retrouve son identité, ses coordonnées, ses missions, ses activités
+                principales et son impact sur la vie locale du territoire.
+            </p>
+        </section>
+
+        <section aria-label="Fiches des organisations">
+            <div class="bandeaux-entreprises">
+
+                <!-- ================= Vallourec ================= -->
+                <article class="bandeau-entreprise apparition" style="--delai: 1">
+                    <span class="bandeau-logo">
+                        <i class="fa-solid fa-industry" aria-hidden="true"></i>
+                        <img src="source/logo_Vallourec.png" alt="Logo de Vallourec" onerror="this.remove()">
+                    </span>
+
+                    <h2 class="bandeau-nom">Vallourec</h2>
+                    <p class="bandeau-type">Industrie &middot; Solutions tubulaires</p>
+
+                    <p class="bandeau-texte">
+                        Groupe industriel français, leader mondial des solutions tubulaires premium destinées
+                        principalement au secteur de l'énergie et à l'industrie.
+                    </p>
+
+                    <h3 class="bandeau-sous-titre">Coordonnées</h3>
+                    <ul class="bandeau-infos">
+                        <li>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <span>Site industriel du bassin de la Sambre &mdash; Aulnoye-Aymeries (59)</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span><a href="https://www.vallourec.com" target="_blank" rel="noopener">vallourec.com</a></span>
+                        </li>
+                    </ul>
+
+                    <h3 class="bandeau-sous-titre">Missions</h3>
+                    <ul class="bandeau-liste">
+                        <li>Concevoir et fabriquer des tubes en acier sans soudure et des raccords.</li>
+                        <li>Fournir des solutions tubulaires pour le pétrole, le gaz, l'hydrogène et la géothermie.</li>
+                        <li>Accompagner la transition énergétique de ses clients industriels.</li>
+                    </ul>
+
+                    <h3 class="bandeau-sous-titre">Impact local</h3>
+                    <p class="bandeau-texte">
+                        Emplois industriels qualifiés, sous-traitance, apprentissage et attractivité
+                        économique du territoire Sambre-Avesnois.
+                    </p>
+
+                    <a class="bouton bouton-secondaire" href="https://www.vallourec.com" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        Site officiel
+                    </a>
+                </article>
+
+                <!-- ===================== MCA ===================== -->
+                <article class="bandeau-entreprise apparition" style="--delai: 2">
+                    <span class="bandeau-logo">
+                        <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                        <img src="source/logo_MCA.png" alt="Logo de MCA" onerror="this.remove()">
+                    </span>
+
+                    <h2 class="bandeau-nom">MCA</h2>
+                    <p class="bandeau-type">Industrie &middot; Équipementier</p>
+
+                    <p class="bandeau-texte">
+                        Entreprise industrielle implantée à Maubeuge, MCA est spécialisée dans la conception
+                        et la fabrication de pièces et d'équipements pour l'industrie.
+                    </p>
+
+                    <h3 class="bandeau-sous-titre">Coordonnées</h3>
+                    <ul class="bandeau-infos">
+                        <li>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                            <span>Maubeuge (59) &mdash; Val de Sambre</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                            <span><a href="#" target="_blank" rel="noopener">Site officiel</a></span>
+                        </li>
+                    </ul>
+
+                    <h3 class="bandeau-sous-titre">Missions</h3>
+                    <ul class="bandeau-liste">
+                        <li>Concevoir et produire des pièces et ensembles industriels.</li>
+                        <li>Répondre aux besoins d'équipementiers et de donneurs d'ordre locaux.</li>
+                        <li>Maintenir un savoir-faire industriel sur le territoire.</li>
+                    </ul>
+
+                    <h3 class="bandeau-sous-titre">Impact local</h3>
+                    <p class="bandeau-texte">
+                        Maintien et développement de l'emploi industriel à Maubeuge, ancrage dans
+                        l'écosystème économique du Val de Sambre.
+                    </p>
+
+                    <a class="bouton bouton-secondaire" href="#" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        Site officiel
+                    </a>
+                </article>
+
             </div>
         </section>
 
-        <section>
-            <div class="banniere-pointe">
-                <p>texte</p>
-            </div>
+        <section class="sources apparition" aria-labelledby="titre-sources">
+            <h2 id="titre-sources" class="section-titre">Sources</h2>
+            <ul>
+                <li>Site officiel de Vallourec &mdash; <a href="https://www.vallourec.com" target="_blank" rel="noopener">vallourec.com</a></li>
+                <li>Site officiel de MCA.</li>
+                <li>Documents de référence publiés par les deux organisations.</li>
+            </ul>
         </section>
 
         <section aria-labelledby="titre-onglets">
-            <h2 id="titre-onglets" class="section-titre apparition">Les onglets</h2>
+            <h2 id="titre-onglets" class="section-titre apparition">Les autres onglets</h2>
             <div class="grille-cartes">
                 <a class="carte apparition" style="--delai: 1" href="page/onglet1.html">
                     <span class="carte-icone"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>

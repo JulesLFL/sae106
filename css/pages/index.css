@@ -53,6 +53,29 @@ img.bandeau{
     font-weight: 700;
     text-align: center;
     color: white;
-    background-color: #e74c3c;
+    background-color: #eee8e7;
+    box-sizing: border-box;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 50% 100%, 0 calc(100% - 20px));
+}
+
+.cercle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 0 1px #ccc;
+    transition: transform 0.4s;
+    margin: 0 auto;
+}
+
+img.logo2{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
