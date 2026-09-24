@@ -1,6 +1,6 @@
 # SAE 106
 
-Site web statique réalisé dans le cadre de la SAE 106 (UPHF – IUT de Maubeuge).
+Site web statique réalisé dans le cadre de la SAE 106 (UPHF - IUT de Maubeuge).
 
 Le site est servi par un conteneur **nginx** (image `nginx:alpine`) et exposé sur le port **30080**.
 

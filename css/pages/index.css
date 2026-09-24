@@ -41,3 +41,18 @@ img.bandeau{
     justify-content: center;
     gap: 12px;
 }
+
+.banniere-pointe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 40px 15px 20px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    background-color: #e74c3c;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 50% 100%, 0 calc(100% - 20px));
+}
