@@ -17,7 +17,8 @@ sae106/
 │   └── pages/            Styles propres à une page (accueil, onglets, 404)
 ├── js/
 │   ├── main.js           Menu hamburger, page active, animations au défilement
-│   └── 404.js            Étoiles, terminal animé et astronaute de la page 404
+│   ├── 404.js            Étoiles, terminal animé et astronaute de la page 404
+│   └── charte.js         Sommaire de la charte et signature en ligne
 ├── source/               Images (logo, bannière)
 ├── nginx/default.conf    Configuration nginx (page 404, cache)
 ├── Dockerfile            Image nginx contenant le site

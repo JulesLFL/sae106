@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="../css/style.css?v=4" rel="stylesheet">
     <link href="../css/pages/onglet.css?v=4" rel="stylesheet">
-    <link href="../css/pages/charte.css?v=5" rel="stylesheet">
+    <link href="../css/pages/charte.css?v=6" rel="stylesheet">
     <title>Charte numérique - SAE 106</title>
     <script>document.documentElement.classList.add("js");</script>
     <script src="../js/main.js?v=4" defer></script>
+    <script src="../js/charte.js?v=6" defer></script>
 </head>
 
 <body>
@@ -60,124 +61,186 @@
             </ul>
         </section>
 
-        <nav class="sommaire bloc apparition" aria-labelledby="titre-sommaire">
-            <h2 id="titre-sommaire">Sommaire</h2>
-            <ol>
-                <li><a href="#preambule">Préambule</a></li>
-                <li><a href="#materiel-personnel">L'utilisation du matériel personnel</a></li>
-                <li><a href="#surveillance">Les moyens de surveillance des salariés</a></li>
-                <li><a href="#messagerie">L'utilisation de la messagerie électronique</a></li>
-                <li><a href="#internet">L'accès internet pour raisons personnelles</a></li>
-                <li><a href="#sanctions">Les sanctions</a></li>
-                <li><a href="#mots-de-passe">Règles pour créer et gérer les mots de passe</a></li>
-                <li><a href="#vpn">L'utilisation du VPN en cas de télétravail</a></li>
-                <li><a href="#gestion-crise">Une politique de gestion de crise</a></li>
-                <li><a href="#maintenance">La maintenance des systèmes informatiques</a></li>
-                <li><a href="#signature">La signature du salarié</a></li>
-            </ol>
-        </nav>
+        <div class="charte-mise-en-page bloc">
+            <details class="sommaire apparition" id="sommaire" open>
+                <summary>
+                    <span class="sommaire-titre"><i class="fa-solid fa-list-ol" aria-hidden="true"></i> Sommaire</span>
+                    <span class="sommaire-compteur" id="compteur-lecture">0 / 10 lus</span>
+                    <i class="fa-solid fa-chevron-down sommaire-chevron" aria-hidden="true"></i>
+                </summary>
+                <div class="sommaire-progression" aria-hidden="true"><span id="barre-lecture"></span></div>
+                <ol>
+                    <li><a href="#preambule"><span class="sommaire-num"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span><span class="sommaire-texte">Préambule</span></a></li>
+                    <li><a href="#materiel-personnel"><span class="sommaire-num">01</span><span class="sommaire-texte">L'utilisation du matériel personnel</span></a></li>
+                    <li><a href="#surveillance"><span class="sommaire-num">02</span><span class="sommaire-texte">Les moyens de surveillance des salariés</span></a></li>
+                    <li><a href="#messagerie"><span class="sommaire-num">03</span><span class="sommaire-texte">L'utilisation de la messagerie électronique</span></a></li>
+                    <li><a href="#internet"><span class="sommaire-num">04</span><span class="sommaire-texte">L'accès internet pour raisons personnelles</span></a></li>
+                    <li><a href="#sanctions"><span class="sommaire-num">05</span><span class="sommaire-texte">Les sanctions</span></a></li>
+                    <li><a href="#mots-de-passe"><span class="sommaire-num">06</span><span class="sommaire-texte">Règles pour créer et gérer les mots de passe</span></a></li>
+                    <li><a href="#vpn"><span class="sommaire-num">07</span><span class="sommaire-texte">L'utilisation du VPN en cas de télétravail</span></a></li>
+                    <li><a href="#gestion-crise"><span class="sommaire-num">08</span><span class="sommaire-texte">Une politique de gestion de crise</span></a></li>
+                    <li><a href="#maintenance"><span class="sommaire-num">09</span><span class="sommaire-texte">La maintenance des systèmes informatiques</span></a></li>
+                    <li><a href="#signature"><span class="sommaire-num">10</span><span class="sommaire-texte">La signature du salarié</span></a></li>
+                </ol>
+                <a class="sommaire-statut" id="statut-signature" href="#signature">
+                    <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+                    <span>Charte non signée</span>
+                </a>
+            </details>
 
-        <section class="bloc" id="preambule" aria-labelledby="titre-preambule">
-            <h2 id="titre-preambule" class="section-titre apparition">Préambule</h2>
-            <div class="preambule apparition">
-                <p>Pourquoi cette charte, à qui elle s'adresse et dans quel cadre elle s'applique : à compléter.</p>
-            </div>
-        </section>
-
-        <section class="bloc" aria-labelledby="titre-articles">
-            <h2 id="titre-articles" class="section-titre apparition">Les articles</h2>
-            <ol class="articles">
-                <li class="article apparition" id="materiel-personnel" style="--delai: 1">
-                    <h3><i class="fa-solid fa-laptop" aria-hidden="true"></i> L'utilisation du matériel personnel</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="surveillance" style="--delai: 2">
-                    <h3><i class="fa-solid fa-eye" aria-hidden="true"></i> Les moyens de surveillance des salariés</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="messagerie" style="--delai: 3">
-                    <h3><i class="fa-solid fa-envelope" aria-hidden="true"></i> L'utilisation de la messagerie électronique</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="internet" style="--delai: 4">
-                    <h3><i class="fa-solid fa-globe" aria-hidden="true"></i> L'accès internet pour raisons personnelles</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="sanctions" style="--delai: 5">
-                    <h3><i class="fa-solid fa-gavel" aria-hidden="true"></i> Les sanctions</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="mots-de-passe" style="--delai: 6">
-                    <h3><i class="fa-solid fa-key" aria-hidden="true"></i> Règles pour créer et gérer les mots de passe</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="vpn" style="--delai: 7">
-                    <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> L'utilisation du VPN en cas de télétravail</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="gestion-crise" style="--delai: 8">
-                    <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Une politique de gestion de crise</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="maintenance" style="--delai: 9">
-                    <h3><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> La maintenance des systèmes informatiques</h3>
-                    <p>Description de l'article à compléter.</p>
-                    <ul class="engagements">
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                        <li>Règle à compléter</li>
-                    </ul>
-                </li>
-                <li class="article apparition" id="signature" style="--delai: 10">
-                    <h3><i class="fa-solid fa-file-signature" aria-hidden="true"></i> La signature du salarié</h3>
-                    <p>En signant cette charte, le salarié reconnaît en avoir pris connaissance et s'engage à la respecter : à compléter.</p>
-                    <div class="signature">
-                        <p>Nom, prénom et date : à compléter</p>
-                        <span>Signature du salarié</span>
+            <div class="charte-corps">
+                <section id="preambule" aria-labelledby="titre-preambule">
+                    <h2 id="titre-preambule" class="section-titre apparition">Préambule</h2>
+                    <div class="preambule apparition">
+                        <p>Pourquoi cette charte, à qui elle s'adresse et dans quel cadre elle s'applique : à compléter.</p>
                     </div>
-                </li>
-            </ol>
-        </section>
+                </section>
+
+                <section class="bloc" aria-labelledby="titre-articles">
+                    <h2 id="titre-articles" class="section-titre apparition">Les articles</h2>
+                    <ol class="articles">
+                        <li class="article apparition" id="materiel-personnel" style="--delai: 1">
+                            <h3><i class="fa-solid fa-laptop" aria-hidden="true"></i> L'utilisation du matériel personnel</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="surveillance" style="--delai: 2">
+                            <h3><i class="fa-solid fa-eye" aria-hidden="true"></i> Les moyens de surveillance des salariés</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="messagerie" style="--delai: 3">
+                            <h3><i class="fa-solid fa-envelope" aria-hidden="true"></i> L'utilisation de la messagerie électronique</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="internet" style="--delai: 4">
+                            <h3><i class="fa-solid fa-globe" aria-hidden="true"></i> L'accès internet pour raisons personnelles</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="sanctions" style="--delai: 5">
+                            <h3><i class="fa-solid fa-gavel" aria-hidden="true"></i> Les sanctions</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="mots-de-passe" style="--delai: 6">
+                            <h3><i class="fa-solid fa-key" aria-hidden="true"></i> Règles pour créer et gérer les mots de passe</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="vpn" style="--delai: 7">
+                            <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> L'utilisation du VPN en cas de télétravail</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="gestion-crise" style="--delai: 8">
+                            <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Une politique de gestion de crise</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="maintenance" style="--delai: 9">
+                            <h3><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> La maintenance des systèmes informatiques</h3>
+                            <p>Description de l'article à compléter.</p>
+                            <ul class="engagements">
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                                <li>Règle à compléter</li>
+                            </ul>
+                        </li>
+                        <li class="article apparition" id="signature" style="--delai: 10">
+                            <h3><i class="fa-solid fa-file-signature" aria-hidden="true"></i> La signature du salarié</h3>
+                            <p>En signant cette charte, le salarié reconnaît en avoir pris connaissance et s'engage à la respecter : à compléter.</p>
+                            <form class="formulaire-signature" id="formulaire-signature" novalidate>
+                                <div class="champs">
+                                    <div class="champ">
+                                        <label for="nom">Nom</label>
+                                        <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+                                    </div>
+                                    <div class="champ">
+                                        <label for="prenom">Prénom</label>
+                                        <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+                                    </div>
+                                    <div class="champ">
+                                        <label for="date-signature">Date</label>
+                                        <input type="text" id="date-signature" name="date" readonly>
+                                    </div>
+                                </div>
+                                <div class="champ">
+                                    <span class="champ-label" id="label-pad">Signature</span>
+                                    <div class="zone-signature">
+                                        <canvas id="pad-signature" role="img" aria-labelledby="label-pad indice-pad"></canvas>
+                                        <p class="indice-pad" id="indice-pad">Signe ici avec la souris ou le doigt</p>
+                                        <button class="effacer-pad" id="effacer-pad" type="button">
+                                            <i class="fa-solid fa-eraser" aria-hidden="true"></i>
+                                            Effacer
+                                        </button>
+                                    </div>
+                                </div>
+                                <label class="case-accord">
+                                    <input type="checkbox" id="accord" name="accord" required>
+                                    <span>J'ai lu la charte numérique et je m'engage à la respecter.</span>
+                                </label>
+                                <p class="erreur-formulaire" id="erreur-signature" role="alert"></p>
+                                <button class="bouton" type="submit">
+                                    <i class="fa-solid fa-signature" aria-hidden="true"></i>
+                                    Signer la charte
+                                </button>
+                            </form>
+                            <div class="charte-signee" id="charte-signee" hidden>
+                                <div class="charte-signee-entete">
+                                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                    <p>Charte signée par <strong id="signee-nom"></strong> le <span id="signee-date"></span></p>
+                                </div>
+                                <img class="signee-image" id="signee-image" alt="">
+                                <div class="charte-signee-actions">
+                                    <a class="bouton" id="telecharger-signature" href="#" download="signature-charte-numerique.png">
+                                        <i class="fa-solid fa-download" aria-hidden="true"></i>
+                                        Télécharger la signature
+                                    </a>
+                                    <button class="bouton bouton-secondaire" id="annuler-signature" type="button">
+                                        <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                                        Annuler la signature
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+            </div>
+        </div>
 
         <div class="retour apparition">
             <a class="bouton bouton-secondaire" href="../index.html">
@@ -198,6 +261,8 @@
         </div>
         <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
     </footer>
+
+    <div class="notification" id="notification" role="status" aria-live="polite"></div>
 </body>
 
 </html>
