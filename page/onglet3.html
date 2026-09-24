@@ -7,12 +7,12 @@
     <meta name="description" content="Charte numérique - Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
     <link rel="icon" href="../source/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="../css/style.css?v=4" rel="stylesheet">
-    <link href="../css/pages/onglet.css?v=4" rel="stylesheet">
+    <link href="../css/style.css?v=5" rel="stylesheet">
+    <link href="../css/pages/onglet.css?v=5" rel="stylesheet">
     <link href="../css/pages/charte.css?v=6" rel="stylesheet">
     <title>Charte numérique - SAE 106</title>
     <script>document.documentElement.classList.add("js");</script>
-    <script src="../js/main.js?v=4" defer></script>
+    <script src="../js/main.js?v=5" defer></script>
     <script src="../js/charte.js?v=6" defer></script>
 </head>
 
@@ -29,6 +29,7 @@
         </button>
         <nav id="menu" aria-label="Menu principal">
             <ul>
+                <li><a href="../index.html" class="navi">Organisations</a></li>
                 <li><a href="onglet1.html" class="navi">Notre approche</a></li>
                 <li><a href="onglet2.html" class="navi">Écologie</a></li>
                 <li><a href="onglet3.html" class="navi">Charte numérique</a></li>
@@ -202,7 +203,7 @@
                                     <span class="champ-label" id="label-pad">Signature</span>
                                     <div class="zone-signature">
                                         <canvas id="pad-signature" role="img" aria-labelledby="label-pad indice-pad"></canvas>
-                                        <p class="indice-pad" id="indice-pad">Signe ici avec la souris ou le doigt</p>
+                                        <p class="indice-pad" id="indice-pad">Signez ici avec la souris ou le doigt</p>
                                         <button class="effacer-pad" id="effacer-pad" type="button">
                                             <i class="fa-solid fa-eraser" aria-hidden="true"></i>
                                             Effacer
@@ -251,15 +252,48 @@
     </main>
 
     <footer>
-        <div class="liens-footer">
-            <a href="https://github.com/JulesLFL/sae106" aria-label="Dépôt GitHub du projet">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.uphf.fr" aria-label="Site de l'UPHF">
-                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-            </a>
+        <div class="footer-grille">
+            <div class="footer-colonne footer-marque">
+                <a class="footer-logo" href="../index.html">
+                    <img src="../source/logo.png" alt="" width="48" height="48">
+                    <span>SAE 106</span>
+                </a>
+                <p>Site de présentation réalisé par des étudiants de l'IUT de Maubeuge (UPHF), autour des organisations du Val de Sambre.</p>
+                <div class="liens-footer">
+                    <a href="https://github.com/JulesLFL/sae106" aria-label="Dépôt GitHub du projet">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.uphf.fr" aria-label="Site de l'UPHF">
+                        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="footer-colonne" aria-label="Plan du site">
+                <h2 class="footer-titre">Navigation</h2>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="onglet1.html">Notre approche</a></li>
+                    <li><a href="onglet2.html">Écologie</a></li>
+                    <li><a href="onglet3.html">Charte numérique</a></li>
+                    <li><a href="onglet4.html">Maubeuge</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-colonne">
+                <h2 class="footer-titre">L'équipe</h2>
+                <ul>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                </ul>
+            </div>
         </div>
-        <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
+
+        <div class="footer-bas">
+            <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
+        </div>
     </footer>
 
     <div class="notification" id="notification" role="status" aria-live="polite"></div>

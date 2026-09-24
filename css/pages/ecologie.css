@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Page Écologie — alignée sur le style de "Notre approche"
+   Page Écologie - alignée sur le style de "Notre approche"
    ========================================================================== */
 
 /* --- Intro en carte blanche ---------------------------------------------- */
@@ -78,12 +78,41 @@
     border-top-right-radius: 10px;
 }
 
-.tableau-comparatif thead th:nth-child(2){
-    color: var(--primaire);
+.tableau-comparatif{
+    --couleur-vallourec: var(--primaire);
+    --couleur-mca: var(--accent);
 }
 
-.tableau-comparatif thead th:nth-child(3){
-    color: var(--accent);
+.tableau-comparatif thead th.col-vallourec,
+.tableau-comparatif thead th.col-mca{
+    font-size: 0.9rem;
+    color: white;
+    border-bottom: none;
+}
+
+.tableau-comparatif thead th.col-vallourec{
+    background-color: var(--couleur-vallourec);
+}
+
+.tableau-comparatif thead th.col-mca{
+    background-color: var(--couleur-mca);
+}
+
+.tableau-comparatif thead th i{
+    margin-right: 8px;
+    opacity: 0.8;
+}
+
+.tableau-comparatif tbody td:nth-child(2){
+    box-shadow: inset 3px 0 0 color-mix(in srgb, var(--couleur-vallourec) 35%, transparent);
+}
+
+.tableau-comparatif tbody td:nth-child(3){
+    box-shadow: inset 3px 0 0 color-mix(in srgb, var(--couleur-mca) 35%, transparent);
+}
+
+.tableau-comparatif tbody tr:nth-child(even) td{
+    background-color: #faf8f4;
 }
 
 /* Critère (colonne de gauche) */
@@ -129,8 +158,13 @@
     border-left: 1px solid var(--bordure);
 }
 
-.tableau-comparatif tbody tr:hover td{
-    background-color: rgba(26, 147, 179, 0.04);
+.tableau-comparatif tbody tr:hover td,
+.tableau-comparatif tbody tr:nth-child(even):hover td{
+    background-color: #eef6f9;
+}
+
+.tableau-comparatif tbody tr:hover th{
+    color: var(--accent);
 }
 
 .tableau-comparatif tbody tr:last-child th,
@@ -144,6 +178,10 @@
 }
 
 /* Tags */
+.tableau-comparatif td:nth-child(3) .tag{
+    color: #0f6f88;
+}
+
 .tableau-comparatif .tag{
     display: inline-block;
     padding: 3px 10px;
@@ -158,14 +196,104 @@
 }
 
 /* ==========================================================================
-   CARTE MENTALE — même langage que "Notre approche"
+   CARTE MENTALE - même langage que "Notre approche"
    ========================================================================== */
 
 .carte-mentale{
+    --trait: color-mix(in srgb, var(--accent) 55%, var(--bordure));
+    --ecart: 56px;
+
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    gap: 24px;
+    gap: var(--ecart);
     align-items: center;
+}
+
+/* Traits qui relient les branches au cercle central */
+.cm-colonne{
+    position: relative;
+}
+
+.cm-branche{
+    position: relative;
+}
+
+.cm-branche::after,
+.cm-colonne::before,
+.cm-colonne::after{
+    content: "";
+    position: absolute;
+    background-color: var(--trait);
+    pointer-events: none;
+}
+
+.cm-branche::after{
+    top: 50%;
+    width: calc(var(--ecart) / 2);
+    height: 2px;
+}
+
+.cm-colonne:first-child .cm-branche::after{
+    left: 100%;
+}
+
+.cm-colonne:last-child .cm-branche::after{
+    right: 100%;
+}
+
+/* 25 % moins la moitié de l'écart (22px) entre les deux branches */
+.cm-colonne::before{
+    top: calc(25% - 5.5px);
+    bottom: calc(25% - 5.5px);
+    width: 2px;
+}
+
+.cm-colonne:first-child::before{
+    right: calc(var(--ecart) / -2);
+}
+
+.cm-colonne:last-child::before{
+    left: calc(var(--ecart) / -2);
+}
+
+.cm-colonne::after{
+    top: 50%;
+    width: calc(var(--ecart) / 2);
+    height: 2px;
+}
+
+.cm-colonne:first-child::after{
+    right: calc(var(--ecart) * -1);
+}
+
+.cm-colonne:last-child::after{
+    left: calc(var(--ecart) * -1);
+}
+
+/* Points d'accroche sur le cercle */
+.cm-central{
+    position: relative;
+}
+
+.cm-central::before,
+.cm-central::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--surface);
+    border-radius: 50%;
+    background-color: var(--accent);
+    transform: translateY(-50%);
+}
+
+.cm-central::before{
+    left: -6px;
+}
+
+.cm-central::after{
+    right: -6px;
 }
 
 /* Cercle central bleu foncé */
@@ -264,62 +392,6 @@
 }
 
 /* ==========================================================================
-   SOURCES
-   ========================================================================== */
-
-.sources{
-    padding: 28px 32px;
-    background-color: var(--surface);
-    border: 1px solid var(--bordure);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px -18px rgba(31, 58, 95, 0.2);
-}
-
-.sources .section-titre{
-    margin-top: 0;
-}
-
-.sources ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: grid;
-    gap: 10px;
-    color: var(--texte-doux);
-    font-size: 0.96rem;
-}
-
-.sources li{
-    position: relative;
-    padding-left: 22px;
-    line-height: 1.6;
-}
-
-.sources li::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.65em;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--or);
-}
-
-.sources a{
-    color: var(--primaire);
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 0.25s, border-color 0.25s;
-}
-
-.sources a:hover{
-    color: var(--accent);
-    border-bottom-color: currentColor;
-}
-
-/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 
@@ -327,6 +399,14 @@
     .carte-mentale{
         grid-template-columns: 1fr;
         gap: 28px;
+    }
+
+    .cm-branche::after,
+    .cm-colonne::before,
+    .cm-colonne::after,
+    .cm-central::before,
+    .cm-central::after{
+        display: none;
     }
 
     .cm-central{
@@ -355,9 +435,5 @@
     .tableau-comparatif tbody td{
         padding: 14px 16px;
         font-size: 0.9rem;
-    }
-
-    .sources{
-        padding: 22px 22px;
     }
 }

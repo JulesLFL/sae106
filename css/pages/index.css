@@ -1,30 +1,203 @@
 .hero{
+    position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: clamp(360px, 48vw, 480px);
+    padding: clamp(40px, 7vw, 80px) clamp(24px, 6vw, 72px);
     border-radius: 12px;
-    border: 1px solid var(--bordure);
-    box-shadow: 0 16px 40px rgba(31, 36, 48, 0.12);
+    color: white;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(26, 147, 179, 0.45), transparent 45%),
+        linear-gradient(135deg, var(--primaire-fonce) 0%, var(--primaire) 60%, #2c5282 100%);
+    box-shadow: 0 16px 40px rgba(31, 36, 48, 0.18);
     animation: fondu-haut 0.8s ease both;
 }
 
-img.bandeau{
-    display: block;
-    width: 100%;
-    height: clamp(200px, 40vw, 420px);
-    object-fit: cover;
-    transition: transform 6s ease;
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    -webkit-mask-image: linear-gradient(to right, transparent 20%, black);
+    mask-image: linear-gradient(to right, transparent 20%, black);
+    pointer-events: none;
 }
 
-.hero:hover img.bandeau{
-    transform: scale(1.03);
+.hero-contenu{
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+}
+
+.hero-surtitre{
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 4px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--or-clair);
+}
+
+.hero-titre{
+    margin: 0 0 18px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: white;
+}
+
+.hero-accroche{
+    margin: 0 0 32px;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-actions{
+    justify-content: flex-start;
+}
+
+.bouton-clair{
+    color: var(--primaire);
+    background-color: white;
+    border-color: white;
+}
+
+.bouton-clair:hover{
+    color: var(--primaire);
+    background-color: var(--or-clair);
+    border-color: var(--or-clair);
+}
+
+.bouton-contour{
+    color: white;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.bouton-contour:hover{
+    color: var(--primaire);
+    background-color: white;
+    border-color: white;
+}
+
+.hero-decor{
+    position: absolute;
+    right: 6%;
+    bottom: -30px;
+    font-size: clamp(9rem, 22vw, 16rem);
+    color: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+.banniere-pointe{
+    position: absolute;
+    top: 0;
+    right: clamp(24px, 6vw, 72px);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96px;
+    padding: 22px 8px 42px;
+    font-family: var(--police-titre);
+    line-height: 1.1;
+    text-align: center;
+    color: var(--primaire-fonce);
+    background: linear-gradient(180deg, #d4a640, var(--or));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 22px), 0 100%);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+    transform-origin: top center;
+    animation: balancer 5s ease-in-out infinite;
+}
+
+.banniere-pointe-haut,
+.banniere-pointe-bas{
+    font-family: var(--police-texte);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.banniere-pointe-num{
+    margin: 4px 0 8px;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.banniere-pointe-bas{
+    padding-top: 8px;
+    border-top: 1px solid rgba(21, 42, 69, 0.3);
+}
+
+@keyframes balancer{
+    0%, 100%{
+        transform: rotate(-1.5deg);
+    }
+    50%{
+        transform: rotate(1.5deg);
+    }
+}
+
+.chiffres-cles{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 0 64px;
+    background-color: var(--surface);
+    border: 1px solid var(--bordure);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px -18px rgba(31, 58, 95, 0.2);
+}
+
+.chiffre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 28px 16px;
+    text-align: center;
+}
+
+.chiffre + .chiffre{
+    border-left: 1px solid var(--bordure);
+}
+
+.chiffre-valeur{
+    font-family: var(--police-titre);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--primaire);
+}
+
+.chiffre-valeur::after{
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 12px auto 0;
+    background-color: var(--or);
+}
+
+.chiffre-label{
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--texte-doux);
 }
 
 .intro{
     max-width: 720px;
-    margin: 64px auto;
+    margin: 64px auto 40px;
     text-align: center;
 }
 
-.intro h1{
+.intro h2{
     margin: 0 0 20px;
     font-size: clamp(1.8rem, 4.5vw, 2.8rem);
 }
@@ -40,22 +213,6 @@ img.bandeau{
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-}
-
-.banniere-pointe{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 500px;
-    margin: 0 auto;
-    padding: 40px 15px 20px;
-    font-weight: 700;
-    text-align: center;
-    color: white;
-    background-color: #eee8e7;
-    box-sizing: border-box;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 50% 100%, 0 calc(100% - 20px));
 }
 
 .cercle{
@@ -78,4 +235,42 @@ img.logo2{
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+
+@media (max-width: 768px){
+    .chiffres-cles{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chiffre:nth-child(3){
+        border-left: none;
+    }
+
+    .chiffre:nth-child(n + 3){
+        border-top: 1px solid var(--bordure);
+    }
+}
+
+@media (max-width: 600px){
+    .hero{
+        padding-top: 120px;
+    }
+
+    .banniere-pointe{
+        width: 76px;
+        padding: 14px 6px 34px;
+    }
+
+    .banniere-pointe-num{
+        font-size: 1.4rem;
+    }
+
+    .hero-actions .bouton{
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.sources + section{
+    margin-top: 64px;
 }

@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Onglet 1 - Les organisations de Maubeuge et du Val de Sambre - SAE 106 IUT de Maubeuge (UPHF)">
+    <meta name="description" content="Accueil - Les organisations de Maubeuge et du Val de Sambre - Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
     <link rel="icon" href="source/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="css/style.css?v=4" rel="stylesheet">
-    <link href="css/pages/index.css?v=4" rel="stylesheet">
-    <title>Organisations - SAE 106 - IUT de Maubeuge</title>
+    <link href="css/style.css?v=5" rel="stylesheet">
+    <link href="css/pages/index.css?v=5" rel="stylesheet">
+    <title>Accueil - SAE 106 - IUT de Maubeuge</title>
     <script>document.documentElement.classList.add("js");</script>
-    <script src="js/main.js?v=4" defer></script>
+    <script src="js/main.js?v=5" defer></script>
 </head>
 
 <body>
@@ -37,24 +37,77 @@
     </header>
 
     <main>
+        <nav class="fil-ariane" aria-label="Fil d'Ariane">
+            <ol>
+                <li aria-current="page">
+                    <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    Accueil
+                </li>
+            </ol>
+        </nav>
+
         <section class="hero">
-            <img class="bandeau" src="source/saev2.png" alt="Bannière de la SAE 106">
+            <div class="hero-contenu">
+                <p class="hero-surtitre">SAE 106 - IUT de Maubeuge</p>
+                <h1 class="hero-titre">Les organisations du Val de Sambre</h1>
+                <p class="hero-accroche">Deux acteurs industriels de Maubeuge et de ses alentours : qui ils sont, ce qu'ils font et leur place sur le territoire.</p>
+                <div class="actions hero-actions">
+                    <a class="bouton bouton-clair" href="#organisations">
+                        <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        Découvrir les organisations
+                    </a>
+                    <a class="bouton bouton-contour" href="page/onglet2.html">
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                        Leur empreinte écologique
+                    </a>
+                </div>
+            </div>
+            <div class="banniere-pointe" aria-hidden="true">
+                <span class="banniere-pointe-haut">SAE</span>
+                <span class="banniere-pointe-num">106</span>
+                <span class="banniere-pointe-bas">2026</span>
+            </div>
+            <i class="fa-solid fa-industry hero-decor" aria-hidden="true"></i>
         </section>
 
         <section class="intro apparition">
-            <h1 class="titre-page">Les organisations</h1>
+            <h2 class="titre-page">Deux organisations, un territoire</h2>
             <p class="onglet-intro">
-                Cette première partie présente deux organisations implantées à Maubeuge et dans le Val de Sambre.
-                Pour chacune d'elles, on retrouve son identité, ses coordonnées, ses missions, ses activités
-                principales et son impact sur la vie locale du territoire.
+                Cette partie présente deux organisations implantées à Maubeuge et dans le Val de Sambre.
+                Pour chacune d'elles, vous retrouverez son identité, ses coordonnées, ses missions, ses activités
+                principales et son impact sur la vie locale.
             </p>
         </section>
 
-        <section aria-label="Fiches des organisations">
+        <section class="chiffres-cles" aria-label="Chiffres clés">
+            <div class="chiffre apparition" style="--delai: 1">
+                <span class="chiffre-valeur">2</span>
+                <span class="chiffre-label">organisations présentées</span>
+            </div>
+            <div class="chiffre apparition" style="--delai: 2">
+                <span class="chiffre-valeur">59</span>
+                <span class="chiffre-label">département du Nord</span>
+            </div>
+            <div class="chiffre apparition" style="--delai: 3">
+                <span class="chiffre-valeur">6</span>
+                <span class="chiffre-label">critères écologiques comparés</span>
+            </div>
+            <div class="chiffre apparition" style="--delai: 4">
+                <span class="chiffre-valeur">1</span>
+                <span class="chiffre-label">territoire : le Val de Sambre</span>
+            </div>
+        </section>
+
+        <section id="organisations" aria-label="Fiches des organisations">
             <div class="bandeaux-entreprises">
 
                 <!-- ================= Vallourec ================= -->
                 <article class="bandeau-entreprise apparition" style="--delai: 1">
+                    <div class="bandeau-photo">
+                        <i class="fa-solid fa-industry" aria-hidden="true"></i>
+                        <img src="source/photo_vallourec.jpg" alt="Site de Vallourec" onerror="this.remove()">
+                    </div>
+
                     <span class="bandeau-logo">
                         <i class="fa-solid fa-industry" aria-hidden="true"></i>
                         <img src="source/logo_Vallourec.png" alt="Logo de Vallourec" onerror="this.remove()">
@@ -72,7 +125,7 @@
                     <ul class="bandeau-infos">
                         <li>
                             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                            <span>Site industriel du bassin de la Sambre &mdash; Aulnoye-Aymeries (59)</span>
+                            <span>Site industriel du bassin de la Sambre - Aulnoye-Aymeries (59)</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-globe" aria-hidden="true"></i>
@@ -101,6 +154,11 @@
 
                 <!-- ===================== MCA ===================== -->
                 <article class="bandeau-entreprise apparition" style="--delai: 2">
+                    <div class="bandeau-photo">
+                        <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                        <img src="source/photo_mca.jpg" alt="Site de MCA" onerror="this.remove()">
+                    </div>
+
                     <span class="bandeau-logo">
                         <i class="fa-solid fa-gears" aria-hidden="true"></i>
                         <img src="source/logo_MCA.png" alt="Logo de MCA" onerror="this.remove()">
@@ -118,7 +176,7 @@
                     <ul class="bandeau-infos">
                         <li>
                             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                            <span>Maubeuge (59) &mdash; Val de Sambre</span>
+                            <span>Maubeuge (59) - Val de Sambre</span>
                         </li>
                         <li>
                             <i class="fa-solid fa-globe" aria-hidden="true"></i>
@@ -151,7 +209,7 @@
         <section class="sources apparition" aria-labelledby="titre-sources">
             <h2 id="titre-sources" class="section-titre">Sources</h2>
             <ul>
-                <li>Site officiel de Vallourec &mdash; <a href="https://www.vallourec.com" target="_blank" rel="noopener">vallourec.com</a></li>
+                <li>Site officiel de Vallourec - <a href="https://www.vallourec.com" target="_blank" rel="noopener">vallourec.com</a></li>
                 <li>Site officiel de MCA.</li>
                 <li>Documents de référence publiés par les deux organisations.</li>
             </ul>
@@ -163,25 +221,25 @@
                 <a class="carte apparition" style="--delai: 1" href="page/onglet1.html">
                     <span class="carte-icone"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
                     <h3>Notre approche</h3>
-                    <p>Présentation de nos méthodes de travail.</p>
+                    <p>Notre méthode de travail et le brainstorming de l'équipe.</p>
                     <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
                 <a class="carte apparition" style="--delai: 2" href="page/onglet2.html">
                     <span class="carte-icone"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span>
                     <h3>Écologie</h3>
-                    <p>L'empreinte écologique de nos entreprises.</p>
+                    <p>L'empreinte écologique des deux organisations et les pistes pour la réduire.</p>
                     <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
                 <a class="carte apparition" style="--delai: 3" href="page/onglet3.html">
                     <span class="carte-icone"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span>
                     <h3>Charte numérique</h3>
-                    <p>Notre charte numérique.</p>
+                    <p>Les règles d'utilisation des outils numériques en entreprise.</p>
                     <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
                 <a class="carte apparition" style="--delai: 4" href="page/onglet4.html">
                     <span class="carte-icone"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
                     <h3>Maubeuge</h3>
-                    <p>Découverte interactive de Maubeuge.</p>
+                    <p>Découverte de la ville de Maubeuge.</p>
                     <span class="carte-lien">Découvrir <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
                 </a>
             </div>
@@ -189,15 +247,48 @@
     </main>
 
     <footer>
-        <div class="liens-footer">
-            <a href="https://github.com/JulesLFL/sae106" aria-label="Dépôt GitHub du projet">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.uphf.fr" aria-label="Site de l'UPHF">
-                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-            </a>
+        <div class="footer-grille">
+            <div class="footer-colonne footer-marque">
+                <a class="footer-logo" href="index.html">
+                    <img src="source/logo.png" alt="" width="48" height="48">
+                    <span>SAE 106</span>
+                </a>
+                <p>Site de présentation réalisé par des étudiants de l'IUT de Maubeuge (UPHF), autour des organisations du Val de Sambre.</p>
+                <div class="liens-footer">
+                    <a href="https://github.com/JulesLFL/sae106" aria-label="Dépôt GitHub du projet">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.uphf.fr" aria-label="Site de l'UPHF">
+                        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="footer-colonne" aria-label="Plan du site">
+                <h2 class="footer-titre">Navigation</h2>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="page/onglet1.html">Notre approche</a></li>
+                    <li><a href="page/onglet2.html">Écologie</a></li>
+                    <li><a href="page/onglet3.html">Charte numérique</a></li>
+                    <li><a href="page/onglet4.html">Maubeuge</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-colonne">
+                <h2 class="footer-titre">L'équipe</h2>
+                <ul>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                </ul>
+            </div>
         </div>
-        <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
+
+        <div class="footer-bas">
+            <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
+        </div>
     </footer>
 </body>
 

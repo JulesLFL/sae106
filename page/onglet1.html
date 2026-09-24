@@ -7,12 +7,12 @@
     <meta name="description" content="Notre approche - Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
     <link rel="icon" href="../source/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="../css/style.css?v=4" rel="stylesheet">
-    <link href="../css/pages/onglet.css?v=4" rel="stylesheet">
-    <link href="../css/pages/brainstorming.css?v=4" rel="stylesheet">
+    <link href="../css/style.css?v=5" rel="stylesheet">
+    <link href="../css/pages/onglet.css?v=5" rel="stylesheet">
+    <link href="../css/pages/brainstorming.css?v=5" rel="stylesheet">
     <title>Notre approche - SAE 106</title>
     <script>document.documentElement.classList.add("js");</script>
-    <script src="../js/main.js?v=4" defer></script>
+    <script src="../js/main.js?v=5" defer></script>
 </head>
 
 <body>
@@ -28,6 +28,7 @@
         </button>
         <nav id="menu" aria-label="Menu principal">
             <ul>
+                <li><a href="../index.html" class="navi">Organisations</a></li>
                 <li><a href="onglet1.html" class="navi">Notre approche</a></li>
                 <li><a href="onglet2.html" class="navi">Écologie</a></li>
                 <li><a href="onglet3.html" class="navi">Charte numérique</a></li>
@@ -65,7 +66,7 @@
             <div class="carte-mentale">
                 <div class="sujet apparition">
                     <span class="sujet-label">Question de départ</span>
-                    <p>Question ou sujet du brainstorming à compléter</p>
+                    <p>Question ou sujet du brainstorming : à compléter</p>
                 </div>
                 <article class="branche apparition" style="--delai: 1; --couleur: var(--primaire)">
                     <h3><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectifs</h3>
@@ -120,6 +121,47 @@
             </ol>
         </section>
 
+        <section class="bloc" aria-labelledby="titre-etapes">
+            <h2 id="titre-etapes" class="section-titre apparition">Les étapes du projet</h2>
+            <ol class="frise">
+                <li class="etape apparition" style="--delai: 1">
+                    <span class="etape-pastille"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+                    <span class="etape-num">Étape 1</span>
+                    <h3>Brainstorming</h3>
+                    <p>Rassembler toutes les idées de l'équipe.</p>
+                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                </li>
+                <li class="etape apparition" style="--delai: 2">
+                    <span class="etape-pastille"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+                    <span class="etape-num">Étape 2</span>
+                    <h3>Recherches</h3>
+                    <p>Se documenter sur les organisations et le territoire.</p>
+                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                </li>
+                <li class="etape apparition" style="--delai: 3">
+                    <span class="etape-pastille"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span>
+                    <span class="etape-num">Étape 3</span>
+                    <h3>Rédaction</h3>
+                    <p>Rédiger les contenus de chaque onglet.</p>
+                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                </li>
+                <li class="etape apparition" style="--delai: 4">
+                    <span class="etape-pastille"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                    <span class="etape-num">Étape 4</span>
+                    <h3>Création du site</h3>
+                    <p>Mettre en page et publier le site.</p>
+                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                </li>
+                <li class="etape apparition" style="--delai: 5">
+                    <span class="etape-pastille"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i></span>
+                    <span class="etape-num">Étape 5</span>
+                    <h3>Présentation</h3>
+                    <p>Présenter le projet à l'oral.</p>
+                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                </li>
+            </ol>
+        </section>
+
         <div class="retour apparition">
             <a class="bouton bouton-secondaire" href="../index.html">
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
@@ -129,15 +171,48 @@
     </main>
 
     <footer>
-        <div class="liens-footer">
-            <a href="https://github.com/JulesLFL/sae106" aria-label="Dépôt GitHub du projet">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.uphf.fr" aria-label="Site de l'UPHF">
-                <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-            </a>
+        <div class="footer-grille">
+            <div class="footer-colonne footer-marque">
+                <a class="footer-logo" href="../index.html">
+                    <img src="../source/logo.png" alt="" width="48" height="48">
+                    <span>SAE 106</span>
+                </a>
+                <p>Site de présentation réalisé par des étudiants de l'IUT de Maubeuge (UPHF), autour des organisations du Val de Sambre.</p>
+                <div class="liens-footer">
+                    <a href="https://github.com/JulesLFL/sae106" aria-label="Dépôt GitHub du projet">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.uphf.fr" aria-label="Site de l'UPHF">
+                        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="footer-colonne" aria-label="Plan du site">
+                <h2 class="footer-titre">Navigation</h2>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="onglet1.html">Notre approche</a></li>
+                    <li><a href="onglet2.html">Écologie</a></li>
+                    <li><a href="onglet3.html">Charte numérique</a></li>
+                    <li><a href="onglet4.html">Maubeuge</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-colonne">
+                <h2 class="footer-titre">L'équipe</h2>
+                <ul>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                    <li>Membre de l'équipe : à compléter</li>
+                </ul>
+            </div>
         </div>
-        <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
+
+        <div class="footer-bas">
+            <p>SAE 106 - IUT de Maubeuge (UPHF) - <span id="annee">2026</span></p>
+        </div>
     </footer>
 </body>
 

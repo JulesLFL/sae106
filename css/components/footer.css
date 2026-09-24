@@ -1,18 +1,86 @@
 footer{
     margin-top: 80px;
-    padding: 36px 16px;
-    text-align: center;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.75);
     background-color: var(--primaire);
     border-top: 4px solid var(--or);
 }
 
+.footer-grille{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px clamp(16px, 4vw, 32px) 36px;
+}
+
+.footer-logo{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-family: var(--police-titre);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-logo img{
+    border-radius: 50%;
+    background-color: white;
+}
+
+.footer-marque p{
+    max-width: 340px;
+    margin: 0 0 18px;
+    line-height: 1.6;
+}
+
+.footer-titre{
+    position: relative;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    font-family: var(--police-texte);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+}
+
+.footer-titre::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 32px;
+    height: 2px;
+    background-color: var(--or);
+}
+
+.footer-colonne ul{
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-colonne ul a{
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.25s, padding-left 0.25s;
+}
+
+.footer-colonne ul a:hover{
+    padding-left: 4px;
+    color: white;
+}
+
 .liens-footer{
     display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 14px;
+    gap: 12px;
 }
 
 .liens-footer a{
@@ -33,6 +101,35 @@ footer{
     background-color: white;
 }
 
-footer p{
+.footer-bas{
+    padding: 16px;
+    text-align: center;
+    font-size: 0.88rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: var(--primaire-fonce);
+}
+
+.footer-bas p{
     margin: 0;
+}
+
+footer a:focus-visible{
+    outline-color: var(--or-clair);
+}
+
+@media (max-width: 768px){
+    .footer-grille{
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer-marque{
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px){
+    .footer-grille{
+        grid-template-columns: 1fr;
+    }
 }

@@ -127,6 +127,87 @@
     color: var(--texte-doux);
 }
 
+.frise{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.frise::before{
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--primaire), var(--accent), var(--or));
+}
+
+.etape{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.etape-pastille{
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 14px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--surface);
+    background-color: var(--primaire);
+    box-shadow: 0 0 0 6px var(--fond), 0 8px 18px rgba(31, 58, 95, 0.25);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.etape:hover .etape-pastille{
+    transform: scale(1.1);
+    background-color: var(--accent);
+}
+
+.etape-num{
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--or);
+}
+
+.etape h3{
+    margin: 4px 0 8px;
+    font-size: 1.05rem;
+}
+
+.etape p{
+    margin: 0 0 10px;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    color: var(--texte-doux);
+}
+
+.etape-date{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primaire);
+    background-color: var(--surface-2);
+}
+
 @media (max-width: 900px){
     .carte-mentale{
         grid-template-columns: 1fr 1fr;
@@ -147,5 +228,39 @@
 
     .retenues li{
         padding-left: 76px;
+    }
+}
+
+@media (max-width: 900px){
+    .frise{
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .frise::before{
+        top: 28px;
+        bottom: 28px;
+        left: 27px;
+        right: auto;
+        width: 3px;
+        height: auto;
+        background: linear-gradient(180deg, var(--primaire), var(--accent), var(--or));
+    }
+
+    .etape{
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        column-gap: 18px;
+        align-items: start;
+        text-align: left;
+    }
+
+    .etape-pastille{
+        grid-row: 1 / span 4;
+        margin-bottom: 0;
+    }
+
+    .etape-date{
+        justify-self: start;
     }
 }

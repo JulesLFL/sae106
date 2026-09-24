@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap");
-@import url("components/animations.css?v=4");
-@import url("components/header.css?v=4");
-@import url("components/footer.css?v=4");
-@import url("components/cartes.css?v=4");
-@import url("components/fil-ariane.css?v=4");
-@import url("components/entreprises.css?v=4");
+@import url("components/animations.css?v=5");
+@import url("components/header.css?v=5");
+@import url("components/footer.css?v=5");
+@import url("components/cartes.css?v=5");
+@import url("components/fil-ariane.css?v=5");
+@import url("components/entreprises.css?v=5");
+@import url("components/sources.css?v=5");
 
 :root{
     --header-height: 90px;
@@ -20,6 +21,7 @@
     --primaire-fonce: #152a45;
     --accent: #1a93b3;
     --or: #b8892b;
+    --or-clair: #f3dca6;
 
     --police-titre: "Libre Baskerville", Georgia, "Times New Roman", serif;
     --police-texte: "Source Sans 3", "Segoe UI", Arial, sans-serif;

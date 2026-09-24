@@ -216,14 +216,14 @@ function verifierFormulaire() {
     });
 
     if (champNom.value.trim() === "" || champPrenom.value.trim() === "") {
-        problemes.push("indique ton nom et ton prénom");
+        problemes.push("indiquez votre nom et votre prénom");
     }
     if (!padRempli) {
-        problemes.push("dessine ta signature");
+        problemes.push("dessinez votre signature");
         zoneSignature.classList.add("invalide");
     }
     if (!caseAccord.checked) {
-        problemes.push("coche la case d'engagement");
+        problemes.push("cochez la case d'engagement");
     }
 
     if (problemes.length > 0) {
