@@ -116,13 +116,8 @@
     color: var(--accent);
 }
 
-.signatures{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-}
-
 .signature{
+    max-width: 360px;
     padding: 20px;
     text-align: center;
     background-color: var(--surface);
@@ -130,9 +125,10 @@
     border-radius: 8px;
 }
 
-.signature p{
+.article .signature p{
     margin: 0;
     font-weight: 600;
+    color: var(--texte);
 }
 
 .signature span{
