@@ -134,6 +134,30 @@ h3{
     background-color: var(--primaire);
 }
 
+.bouton-clair{
+    color: var(--primaire);
+    background-color: white;
+    border-color: white;
+}
+
+.bouton-clair:hover{
+    color: var(--primaire);
+    background-color: var(--or-clair);
+    border-color: var(--or-clair);
+}
+
+.bouton-contour{
+    color: white;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.bouton-contour:hover{
+    color: var(--primaire);
+    background-color: white;
+    border-color: white;
+}
+
 a:focus-visible,
 button:focus-visible{
     outline: 2px solid var(--accent);

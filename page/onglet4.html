@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Maubeuge - Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
+    <meta name="description" content="Découvrir Maubeuge : situation, histoire, patrimoine, culture, événements et gastronomie - Site de la SAE 106 de l'IUT de Maubeuge (UPHF)">
     <link rel="icon" href="../source/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="../css/style.css?v=5" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+    <link href="../css/style.css?v=6" rel="stylesheet">
     <link href="../css/pages/onglet.css?v=5" rel="stylesheet">
+    <link href="../css/pages/maubeuge.css?v=1" rel="stylesheet">
     <title>Maubeuge - SAE 106</title>
     <script>document.documentElement.classList.add("js");</script>
     <script src="../js/main.js?v=5" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+    <script src="../js/maubeuge.js?v=1" defer></script>
 </head>
 
 <body>
@@ -49,15 +53,401 @@
             </ol>
         </nav>
 
-        <section class="entete-page apparition">
-            <div class="entete-icone"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
-            <h1 class="titre-page">Maubeuge</h1>
-            <p>Présentation de la ville de Maubeuge : à compléter.</p>
+        <section class="ville-hero">
+            <div class="ville-hero-contenu">
+                <p class="ville-hero-surtitre">Nord - Hauts-de-France</p>
+                <h1 class="ville-hero-titre">Découvrir Maubeuge</h1>
+                <p class="ville-hero-accroche">Une cité fortifiée par Vauban, posée au bord de la Sambre, à deux pas de la Belgique. Remparts, zoo, scène nationale et maroilles : suivez le guide.</p>
+                <div class="ville-hero-actions">
+                    <a class="bouton bouton-clair" href="#carte">
+                        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                        Explorer la carte
+                    </a>
+                    <a class="bouton bouton-contour" href="#histoire">
+                        <i class="fa-solid fa-hourglass-half" aria-hidden="true"></i>
+                        Remonter le temps
+                    </a>
+                </div>
+            </div>
+            <i class="fa-solid fa-chess-rook ville-hero-decor" aria-hidden="true"></i>
+            <svg class="ville-hero-vagues" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+                <path class="vague vague-1" d="M0 40 Q 150 10 300 40 T 600 40 T 900 40 T 1200 40 T 1500 40 T 1800 40 T 2100 40 T 2400 40 V 80 H 0 Z"></path>
+                <path class="vague vague-2" d="M0 50 Q 150 25 300 50 T 600 50 T 900 50 T 1200 50 T 1500 50 T 1800 50 T 2100 50 T 2400 50 V 80 H 0 Z"></path>
+            </svg>
+        </section>
+
+        <ul class="chiffres-ville apparition" aria-label="Maubeuge en chiffres">
+            <li class="chiffre-ville">
+                <span class="chiffre-ville-valeur">vers <span class="compteur" data-cible="661">661</span></span>
+                <span class="chiffre-ville-label">fondation par sainte Aldegonde</span>
+            </li>
+            <li class="chiffre-ville">
+                <span class="chiffre-ville-valeur"><span class="compteur" data-cible="1678">1678</span></span>
+                <span class="chiffre-ville-label">Maubeuge devient française</span>
+            </li>
+            <li class="chiffre-ville">
+                <span class="chiffre-ville-valeur">~<span class="compteur" data-cible="29000" data-separateur="true">29 000</span></span>
+                <span class="chiffre-ville-label">habitants, les Maubeugeois</span>
+            </li>
+            <li class="chiffre-ville">
+                <span class="chiffre-ville-valeur"><span class="compteur" data-cible="20">20</span> km</span>
+                <span class="chiffre-ville-label">de Mons, en Belgique</span>
+            </li>
+        </ul>
+
+        <!-- ============ Situation géographique ============ -->
+        <section class="bloc" id="situation" aria-labelledby="titre-situation">
+            <h2 id="titre-situation" class="section-titre apparition">Situation géographique</h2>
+            <div class="situation">
+                <div class="situation-texte apparition">
+                    <p>
+                        Maubeuge se trouve dans le <strong>département du Nord</strong>, en région
+                        <strong>Hauts-de-France</strong>, à quelques kilomètres seulement de la
+                        <strong>frontière belge</strong>. La ville est traversée par la <strong>Sambre</strong>,
+                        une rivière canalisée qui relie la France à la Belgique.
+                    </p>
+                    <p>
+                        Elle est le cœur de l'<strong>agglomération Maubeuge Val de Sambre</strong>, un bassin
+                        industriel d'une quarantaine de communes, et la porte d'entrée de
+                        l'<strong>Avesnois</strong>, territoire de bocage, de forêts et de lacs réputé pour
+                        son parc naturel régional.
+                    </p>
+                    <ul class="infos-seance situation-pastilles">
+                        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Nord (59)</li>
+                        <li><i class="fa-solid fa-water" aria-hidden="true"></i> Vallée de la Sambre</li>
+                        <li><i class="fa-solid fa-flag" aria-hidden="true"></i> Frontière belge</li>
+                    </ul>
+                </div>
+                <div class="distances apparition" style="--delai: 2">
+                    <h3><i class="fa-solid fa-compass" aria-hidden="true"></i> Maubeuge est à...</h3>
+                    <ul>
+                        <li style="--distance: 20">
+                            <span class="distance-ville">Mons (Belgique)</span>
+                            <span class="distance-barre"><span></span></span>
+                            <span class="distance-km">20 km</span>
+                        </li>
+                        <li style="--distance: 33">
+                            <span class="distance-ville">Valenciennes</span>
+                            <span class="distance-barre"><span></span></span>
+                            <span class="distance-km">33 km</span>
+                        </li>
+                        <li style="--distance: 69">
+                            <span class="distance-ville">Bruxelles</span>
+                            <span class="distance-barre"><span></span></span>
+                            <span class="distance-km">69 km</span>
+                        </li>
+                        <li style="--distance: 76">
+                            <span class="distance-ville">Lille</span>
+                            <span class="distance-barre"><span></span></span>
+                            <span class="distance-km">76 km</span>
+                        </li>
+                        <li style="--distance: 197">
+                            <span class="distance-ville">Paris</span>
+                            <span class="distance-barre"><span></span></span>
+                            <span class="distance-km">197 km</span>
+                        </li>
+                    </ul>
+                    <p class="distances-note">Distances à vol d'oiseau, arrondies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Histoire : frise interactive ============ -->
+        <section class="bloc" id="histoire" aria-labelledby="titre-histoire">
+            <h2 id="titre-histoire" class="section-titre apparition">Histoire : 13 siècles en 8 dates</h2>
+            <p class="section-intro apparition">Cliquez sur une date de la frise, ou utilisez les flèches, pour voyager dans le temps.</p>
+
+            <div class="frise apparition" id="frise">
+                <div class="frise-dates" role="tablist" aria-label="Dates de l'histoire de Maubeuge">
+                    <button class="frise-date" type="button" role="tab" id="onglet-661" aria-controls="epoque-661">661</button>
+                    <button class="frise-date" type="button" role="tab" id="onglet-hainaut" aria-controls="epoque-hainaut">Moyen Âge</button>
+                    <button class="frise-date" type="button" role="tab" id="onglet-1678" aria-controls="epoque-1678">1678</button>
+                    <button class="frise-date" type="button" role="tab" id="onglet-1793" aria-controls="epoque-1793">1793</button>
+                    <button class="frise-date" type="button" role="tab" id="onglet-1914" aria-controls="epoque-1914">1914</button>
+                    <button class="frise-date" type="button" role="tab" id="onglet-1940" aria-controls="epoque-1940">1940</button>
+                    <button class="frise-date" type="button" role="tab" id="onglet-1945" aria-controls="epoque-1945">1945</button>
+                    <button class="frise-date" type="button" role="tab" id="onglet-auj" aria-controls="epoque-auj">Aujourd'hui</button>
+                    <span class="frise-progression" aria-hidden="true"><span id="frise-remplissage"></span></span>
+                </div>
+
+                <div class="frise-panneaux">
+                    <article class="epoque" id="epoque-661" role="tabpanel" aria-labelledby="onglet-661">
+                        <span class="epoque-icone"><i class="fa-solid fa-church" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">Vers 661</p>
+                            <h3>Sainte Aldegonde fonde la ville</h3>
+                            <p>Aldegonde, issue d'une famille noble franque, fonde une communauté religieuse au bord de la Sambre. Une ville grandit peu à peu autour de ce monastère, qui deviendra un chapitre de chanoinesses. Aldegonde est toujours la sainte patronne de Maubeuge.</p>
+                        </div>
+                    </article>
+                    <article class="epoque" id="epoque-hainaut" role="tabpanel" aria-labelledby="onglet-hainaut">
+                        <span class="epoque-icone"><i class="fa-solid fa-shield" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">Du Moyen Âge au XVIIe siècle</p>
+                            <h3>Une ville du Hainaut</h3>
+                            <p>Maubeuge appartient au comté de Hainaut, puis passe aux Pays-Bas bourguignons et espagnols. Située sur une frontière disputée, elle est plusieurs fois assiégée, pillée et reconstruite. C'est aussi la ville natale du peintre Jan Gossaert, dit <strong>Mabuse</strong>.</p>
+                        </div>
+                    </article>
+                    <article class="epoque" id="epoque-1678" role="tabpanel" aria-labelledby="onglet-1678">
+                        <span class="epoque-icone"><i class="fa-solid fa-chess-rook" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">1678</p>
+                            <h3>Maubeuge devient française</h3>
+                            <p>Par le traité de Nimègue, Maubeuge est rattachée au royaume de Louis XIV. Le roi confie à <strong>Vauban</strong> la construction d'une place forte pour protéger la nouvelle frontière : bastions, fossés et portes monumentales, dont la célèbre <strong>porte de Mons</strong>.</p>
+                        </div>
+                    </article>
+                    <article class="epoque" id="epoque-1793" role="tabpanel" aria-labelledby="onglet-1793">
+                        <span class="epoque-icone"><i class="fa-solid fa-flag" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">Octobre 1793</p>
+                            <h3>La victoire de Wattignies</h3>
+                            <p>Pendant la Révolution, Maubeuge est assiégée par les armées autrichiennes. La victoire française de <strong>Wattignies</strong>, à quelques kilomètres, permet de libérer la ville. Un monument rappelle cet épisode près de la porte de Mons.</p>
+                        </div>
+                    </article>
+                    <article class="epoque" id="epoque-1914" role="tabpanel" aria-labelledby="onglet-1914">
+                        <span class="epoque-icone"><i class="fa-solid fa-person-military-rifle" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">Août - septembre 1914</p>
+                            <h3>Le siège de Maubeuge</h3>
+                            <p>Au début de la Première Guerre mondiale, la place forte résiste plusieurs jours à l'armée allemande avant de capituler le 7 septembre 1914. La ville reste occupée jusqu'en novembre 1918.</p>
+                        </div>
+                    </article>
+                    <article class="epoque" id="epoque-1940" role="tabpanel" aria-labelledby="onglet-1940">
+                        <span class="epoque-icone"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">Mai 1940</p>
+                            <h3>Une ville détruite</h3>
+                            <p>Lors de l'offensive allemande, les bombardements et les incendies détruisent environ 90 % du centre-ville. Seuls quelques monuments, comme les remparts de Vauban et la chapelle des Sœurs Noires, traversent l'épreuve.</p>
+                        </div>
+                    </article>
+                    <article class="epoque" id="epoque-1945" role="tabpanel" aria-labelledby="onglet-1945">
+                        <span class="epoque-icone"><i class="fa-solid fa-trowel-bricks" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">1945 - années 1960</p>
+                            <h3>La reconstruction de Lurçat</h3>
+                            <p>L'architecte <strong>André Lurçat</strong> redessine le centre-ville : larges avenues, immeubles modernes et nouvelle église Saint-Pierre-Saint-Paul. Maubeuge devient un exemple de la reconstruction d'après-guerre en France.</p>
+                        </div>
+                    </article>
+                    <article class="epoque" id="epoque-auj" role="tabpanel" aria-labelledby="onglet-auj">
+                        <span class="epoque-icone"><i class="fa-solid fa-city" aria-hidden="true"></i></span>
+                        <div>
+                            <p class="epoque-date">Aujourd'hui</p>
+                            <h3>Industrie, culture et études</h3>
+                            <p>Maubeuge reste un pôle industriel, avec notamment l'usine <strong>MCA</strong> du groupe Renault, où est fabriqué le Kangoo. La ville accueille aussi un campus de l'<strong>UPHF</strong>, une scène nationale et un zoo installé dans ses anciennes fortifications.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="frise-navigation">
+                    <button class="bouton bouton-secondaire" type="button" id="frise-precedent">
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                        <span>Précédent</span>
+                    </button>
+                    <button class="bouton" type="button" id="frise-suivant">
+                        <span>Suivant</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Carte interactive ============ -->
+        <section class="bloc" id="carte" aria-labelledby="titre-carte">
+            <h2 id="titre-carte" class="section-titre apparition">Carte interactive de la ville</h2>
+            <p class="section-intro apparition">Filtrez les lieux par thème, puis cliquez sur un lieu de la liste ou sur un repère de la carte pour le découvrir.</p>
+
+            <div class="explorateur apparition">
+                <div class="explorateur-panneau">
+                    <div class="filtres" role="group" aria-label="Filtrer les lieux">
+                        <button class="filtre" type="button" data-filtre="tous" aria-pressed="true">Tous</button>
+                        <button class="filtre filtre-patrimoine" type="button" data-filtre="patrimoine" aria-pressed="false"><i class="fa-solid fa-chess-rook" aria-hidden="true"></i> Patrimoine</button>
+                        <button class="filtre filtre-culture" type="button" data-filtre="culture" aria-pressed="false"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Culture</button>
+                        <button class="filtre filtre-nature" type="button" data-filtre="nature" aria-pressed="false"><i class="fa-solid fa-tree" aria-hidden="true"></i> Nature</button>
+                        <button class="filtre filtre-vie" type="button" data-filtre="vie" aria-pressed="false"><i class="fa-solid fa-city" aria-hidden="true"></i> Vie locale</button>
+                    </div>
+                    <p class="lieux-compteur" id="lieux-compteur" aria-live="polite"></p>
+                    <ul class="lieux" id="liste-lieux"></ul>
+                </div>
+                <div class="carte-conteneur">
+                    <div class="carte-ville" id="carte-ville" role="region" aria-label="Carte de Maubeuge"></div>
+                    <button class="carte-recentrer" type="button" id="carte-recentrer">
+                        <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                        Voir tous les lieux
+                    </button>
+                    <p class="carte-erreur" id="carte-erreur" hidden>
+                        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                        La carte n'a pas pu être chargée (connexion internet nécessaire). La liste des lieux reste disponible.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Patrimoine et culture ============ -->
+        <section class="bloc" id="patrimoine" aria-labelledby="titre-patrimoine">
+            <h2 id="titre-patrimoine" class="section-titre apparition">Patrimoine et culture</h2>
+            <div class="grille-cartes">
+                <article class="carte apparition" style="--delai: 1">
+                    <span class="carte-icone"><i class="fa-solid fa-chess-rook" aria-hidden="true"></i></span>
+                    <h3>Les remparts de Vauban</h3>
+                    <p>Bastions, fossés en eau et lunettes : une grande partie de l'enceinte du XVIIe siècle est encore visible et se parcourt à pied, de la porte de Mons à la Sambre.</p>
+                    <button class="carte-lien voir-carte" type="button" data-lieu="remparts">Voir sur la carte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </article>
+                <article class="carte apparition" style="--delai: 2">
+                    <span class="carte-icone"><i class="fa-solid fa-church" aria-hidden="true"></i></span>
+                    <h3>Église Saint-Pierre-Saint-Paul</h3>
+                    <p>Reconstruite par André Lurçat après la guerre, elle conserve le trésor de sainte Aldegonde, fondatrice de la ville.</p>
+                    <button class="carte-lien voir-carte" type="button" data-lieu="eglise">Voir sur la carte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </article>
+                <article class="carte apparition" style="--delai: 3">
+                    <span class="carte-icone"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+                    <h3>Le parc zoologique</h3>
+                    <p>Installé au pied des remparts, le zoo présente des animaux du monde entier : éléphants, girafes, tigres, hippopotames...</p>
+                    <button class="carte-lien voir-carte" type="button" data-lieu="zoo">Voir sur la carte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </article>
+                <article class="carte apparition" style="--delai: 4">
+                    <span class="carte-icone"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i></span>
+                    <h3>Le Manège, scène nationale</h3>
+                    <p>Théâtre, danse, cirque et musique : Le Manège propose une saison de spectacles d'envergure internationale.</p>
+                    <button class="carte-lien voir-carte" type="button" data-lieu="manege">Voir sur la carte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </article>
+                <article class="carte apparition" style="--delai: 5">
+                    <span class="carte-icone"><i class="fa-solid fa-palette" aria-hidden="true"></i></span>
+                    <h3>Chapelle des Sœurs Noires</h3>
+                    <p>Ancienne chapelle de couvent épargnée par les destructions, aujourd'hui lieu d'expositions au cœur de la ville.</p>
+                    <button class="carte-lien voir-carte" type="button" data-lieu="soeurs-noires">Voir sur la carte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </article>
+                <article class="carte apparition" style="--delai: 6">
+                    <span class="carte-icone"><i class="fa-solid fa-industry" aria-hidden="true"></i></span>
+                    <h3>Espace Sculfort</h3>
+                    <p>Une ancienne usine reconvertie en lieu culturel, témoin du passé industriel de la ville : concerts, spectacles et expositions.</p>
+                    <button class="carte-lien voir-carte" type="button" data-lieu="sculfort">Voir sur la carte <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ Événements ============ -->
+        <section class="bloc" id="evenements" aria-labelledby="titre-evenements">
+            <h2 id="titre-evenements" class="section-titre apparition">Une année à Maubeuge</h2>
+            <ol class="saisons">
+                <li class="saison apparition" style="--delai: 1">
+                    <span class="saison-badge saison-printemps"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Printemps</span>
+                    <h3>Festival VIA</h3>
+                    <p>Organisé par Le Manège, le festival met à l'honneur le théâtre, la danse et les arts numériques.</p>
+                </li>
+                <li class="saison apparition" style="--delai: 2">
+                    <span class="saison-badge saison-ete"><i class="fa-solid fa-sun" aria-hidden="true"></i> Été</span>
+                    <h3>Balades au fil de la Sambre</h3>
+                    <p>Chemin de halage, remparts et zoo : la belle saison est idéale pour découvrir la ville à pied ou à vélo.</p>
+                </li>
+                <li class="saison apparition" style="--delai: 3">
+                    <span class="saison-badge saison-automne"><i class="fa-solid fa-leaf" aria-hidden="true"></i> Septembre</span>
+                    <h3>Journées européennes du patrimoine</h3>
+                    <p>Visites des fortifications, de la porte de Mons et des monuments habituellement fermés au public.</p>
+                </li>
+                <li class="saison apparition" style="--delai: 4">
+                    <span class="saison-badge saison-hiver"><i class="fa-solid fa-snowflake" aria-hidden="true"></i> Décembre</span>
+                    <h3>Marché de Noël</h3>
+                    <p>Chalets, illuminations et spécialités locales animent le centre-ville pendant les fêtes de fin d'année.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============ Gastronomie ============ -->
+        <section class="bloc" id="gastronomie" aria-labelledby="titre-gastronomie">
+            <h2 id="titre-gastronomie" class="section-titre apparition">Gastronomie</h2>
+            <p class="section-intro apparition">Entre Flandre, Hainaut et Avesnois, la cuisine locale est généreuse. Retournez les cartes pour découvrir chaque spécialité.</p>
+            <ul class="plats">
+                <li class="plat apparition" style="--delai: 1">
+                    <button class="plat-carte" type="button" aria-pressed="false">
+                        <span class="plat-face plat-recto">
+                            <i class="fa-solid fa-cheese" aria-hidden="true"></i>
+                            <span class="plat-nom">Le maroilles</span>
+                            <span class="plat-indice">Retourner</span>
+                        </span>
+                        <span class="plat-face plat-verso">Fromage AOP à croûte orangée, fabriqué dans l'Avesnois tout proche. Il serait né il y a plus de mille ans à l'abbaye de Maroilles.</span>
+                    </button>
+                </li>
+                <li class="plat apparition" style="--delai: 2">
+                    <button class="plat-carte" type="button" aria-pressed="false">
+                        <span class="plat-face plat-recto">
+                            <i class="fa-solid fa-pizza-slice" aria-hidden="true"></i>
+                            <span class="plat-nom">La flamiche</span>
+                            <span class="plat-indice">Retourner</span>
+                        </span>
+                        <span class="plat-face plat-verso">Tarte fondante au maroilles, à partager à l'apéritif ou en plat avec une salade verte.</span>
+                    </button>
+                </li>
+                <li class="plat apparition" style="--delai: 3">
+                    <button class="plat-carte" type="button" aria-pressed="false">
+                        <span class="plat-face plat-recto">
+                            <i class="fa-solid fa-pepper-hot" aria-hidden="true"></i>
+                            <span class="plat-nom">La boulette d'Avesnes</span>
+                            <span class="plat-indice">Retourner</span>
+                        </span>
+                        <span class="plat-face plat-verso">Fromage en forme de cône, relevé de poivre, d'herbes et de paprika. Puissant, pour les amateurs !</span>
+                    </button>
+                </li>
+                <li class="plat apparition" style="--delai: 4">
+                    <button class="plat-carte" type="button" aria-pressed="false">
+                        <span class="plat-face plat-recto">
+                            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+                            <span class="plat-nom">La carbonnade flamande</span>
+                            <span class="plat-indice">Retourner</span>
+                        </span>
+                        <span class="plat-face plat-verso">Bœuf mijoté à la bière avec du pain d'épices et des oignons, servi avec des frites.</span>
+                    </button>
+                </li>
+                <li class="plat apparition" style="--delai: 5">
+                    <button class="plat-carte" type="button" aria-pressed="false">
+                        <span class="plat-face plat-recto">
+                            <i class="fa-solid fa-cake-candles" aria-hidden="true"></i>
+                            <span class="plat-nom">La tarte au sucre</span>
+                            <span class="plat-indice">Retourner</span>
+                        </span>
+                        <span class="plat-face plat-verso">Pâte briochée garnie de sucre roux (la vergeoise) et de crème : le dessert incontournable du Nord.</span>
+                    </button>
+                </li>
+                <li class="plat apparition" style="--delai: 6">
+                    <button class="plat-carte" type="button" aria-pressed="false">
+                        <span class="plat-face plat-recto">
+                            <i class="fa-solid fa-beer-mug-empty" aria-hidden="true"></i>
+                            <span class="plat-nom">Les bières locales</span>
+                            <span class="plat-indice">Retourner</span>
+                        </span>
+                        <span class="plat-face plat-verso">Bières de garde et brasseries artisanales de l'Avesnois : une tradition partagée avec la Belgique voisine.</span>
+                    </button>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ============ Le saviez-vous ============ -->
+        <section class="bloc anecdote apparition" aria-labelledby="titre-anecdote">
+            <span class="anecdote-icone"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+            <div class="anecdote-contenu">
+                <h2 id="titre-anecdote">Le saviez-vous ?</h2>
+                <p id="anecdote-texte" aria-live="polite">La chanson « Le Clair de lune à Maubeuge », écrite par Pierre Perrin en 1962 et reprise notamment par Bourvil, a rendu le nom de la ville célèbre dans toute la France.</p>
+                <button class="bouton bouton-secondaire" type="button" id="anecdote-suivante" hidden>
+                    <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+                    Une autre anecdote
+                </button>
+            </div>
+        </section>
+
+        <section class="sources apparition" aria-labelledby="titre-sources">
+            <h2 id="titre-sources" class="section-titre">Sources documentaires</h2>
+            <ul>
+                <li>Site officiel de la ville : <a href="https://www.ville-maubeuge.fr" target="_blank" rel="noopener">ville-maubeuge.fr</a>.</li>
+                <li>Le Manège, scène nationale : <a href="https://www.lemanege.com" target="_blank" rel="noopener">lemanege.com</a>.</li>
+                <li>Article « Maubeuge » sur <a href="https://fr.wikipedia.org/wiki/Maubeuge" target="_blank" rel="noopener">Wikipédia</a>.</li>
+                <li>Fond de carte : © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">contributeurs OpenStreetMap</a>, bibliothèque <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>.</li>
+            </ul>
+        </section>
+
+        <div class="retour apparition">
             <a class="bouton bouton-secondaire" href="../index.html">
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                 Retour à l'accueil
             </a>
-        </section>
+        </div>
     </main>
 
     <footer>

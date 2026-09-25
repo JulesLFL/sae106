@@ -35,7 +35,7 @@ Il est servi par un conteneur **nginx** (image `nginx:alpine`) et exposé sur le
 | **Notre approche** | `page/onglet1.html` | Informations sur la séance de brainstorming, carte des idées (objectifs, idées, moyens, contraintes), idées retenues et frise des étapes du projet. |
 | **Écologie** | `page/onglet2.html` | Tableau comparatif des actions environnementales des deux organisations sur 6 critères, carte mentale reliée d'autres pistes possibles et sources documentaires. |
 | **Charte numérique** | `page/onglet3.html` | Charte d'utilisation des outils numériques en 10 articles, sommaire interactif et formulaire de signature en ligne. |
-| **Maubeuge** | `page/onglet4.html` | Présentation de la ville de Maubeuge (page en attente de contenu). |
+| **Maubeuge** | `page/onglet4.html` | Découverte de la ville : bannière animée (la Sambre qui coule), chiffres clés animés, situation géographique avec distances, frise historique interactive en 8 dates, carte interactive filtrable de 17 lieux (Leaflet + OpenStreetMap), patrimoine et culture, événements de l'année, gastronomie en cartes à retourner, anecdotes « Le saviez-vous ? » et sources. |
 | **Erreur 404** | `404.html` | Page d'erreur personnalisée sur le thème de l'espace (astronaute, terminal animé). |
 
 Toutes les pages partagent le même en-tête (logo, menu, menu burger sur mobile), le même fil d'Ariane et le même pied de page.
@@ -125,8 +125,9 @@ Toutes les pages partagent le même en-tête (logo, menu, menu burger sur mobile
 |---|---|
 | HTML5 | Structure des pages |
 | CSS3 | Mise en page (Grid, Flexbox), variables, animations, `clip-path`, `color-mix()` |
-| JavaScript (sans framework) | Menu, animations, sommaire, signature, page 404 |
+| JavaScript (sans framework) | Menu, animations, sommaire, signature, frise et carte de Maubeuge, page 404 |
 | [Font Awesome 6.5.1](https://fontawesome.com/) | Icônes (chargées depuis le CDN cdnjs) |
+| [Leaflet 1.9.4](https://leafletjs.com/) | Carte interactive de la page Maubeuge (CDN cdnjs, fond de carte OpenStreetMap) |
 | [Google Fonts](https://fonts.google.com/) | Polices Libre Baskerville et Source Sans 3 (et Bungee, Space Grotesk, Space Mono pour la 404) |
 | nginx (`nginx:alpine`) | Serveur web dans le conteneur |
 | Docker / Docker Compose | Construction de l'image et lancement du site |
@@ -146,7 +147,7 @@ sae106/
 │   ├── onglet1.html            Notre approche (brainstorming, frise des étapes)
 │   ├── onglet2.html            Écologie (tableau comparatif, carte mentale)
 │   ├── onglet3.html            Charte numérique (sommaire, articles, signature)
-│   └── onglet4.html            Maubeuge
+│   └── onglet4.html            Maubeuge (frise, carte interactive, gastronomie)
 ├── css/
 │   ├── style.css               Base commune : variables, polices, titres, boutons, imports
 │   ├── components/             Éléments réutilisés sur plusieurs pages
@@ -163,10 +164,12 @@ sae106/
 │       ├── brainstorming.css   Notre approche (carte des idées, frise)
 │       ├── ecologie.css        Écologie (tableau, carte mentale)
 │       ├── charte.css          Charte numérique (sommaire, articles, signature)
+│       ├── maubeuge.css        Maubeuge (bannière, frise, carte, cartes à retourner)
 │       └── 404.css             Page 404
 ├── js/
 │   ├── main.js                 Menu burger, page active, en-tête, apparitions, année
 │   ├── charte.js               Sommaire interactif et signature de la charte
+│   ├── maubeuge.js             Compteurs, frise, carte interactive, gastronomie, anecdotes
 │   └── 404.js                  Étoiles, terminal animé et astronaute de la page 404
 ├── source/                     Images
 │   ├── logo.png                Logo de l'IUT (en-tête, pied de page, favicon)
@@ -190,7 +193,7 @@ sae106/
 | `onglet1.html` | `style.css`, `pages/onglet.css`, `pages/brainstorming.css` | `main.js` |
 | `onglet2.html` | `style.css`, `pages/ecologie.css` | `main.js` |
 | `onglet3.html` | `style.css`, `pages/onglet.css`, `pages/charte.css` | `main.js`, `charte.js` |
-| `onglet4.html` | `style.css`, `pages/onglet.css` | `main.js` |
+| `onglet4.html` | `style.css`, `pages/onglet.css`, `pages/maubeuge.css` (+ Leaflet) | `main.js`, Leaflet, `maubeuge.js` |
 | `404.html` | `style.css`, `pages/404.css` | `404.js` |
 
 `style.css` importe lui-même tous les fichiers de `css/components/`.
@@ -237,6 +240,18 @@ grep -rl "?v=5" --exclude-dir=.git . | xargs sed -i 's/?v=5/?v=6/g'
 | Formulaire | Vérification des champs, de la signature et de la case d'engagement |
 | Enregistrement | Sauvegarde, lecture et suppression de la signature dans le `localStorage` du navigateur |
 | Notifications | Message dans la page et notification système du navigateur |
+
+### `js/maubeuge.js` (Maubeuge)
+
+| Partie | Rôle |
+|---|---|
+| `LIEUX`, `CATEGORIES` | Données de la carte : nom, catégorie, icône, coordonnées et description de chaque lieu. Pour ajouter un lieu, ajouter un objet à `LIEUX`. |
+| `ANECDOTES` | Textes du bloc « Le saviez-vous ? » |
+| `initialiserCompteurs` | Chiffres clés qui défilent quand ils arrivent à l'écran |
+| `initialiserFrise` | Frise historique : onglets accessibles au clavier (flèches, Début, Fin), boutons Précédent / Suivant, barre de progression |
+| `initialiserCarte` | Carte Leaflet, repères colorés par thème, filtres, liste synchronisée, boutons « Voir sur la carte » ; si Leaflet ne se charge pas, un message s'affiche et la liste reste utilisable |
+| `initialiserPlats` | Cartes de gastronomie à retourner |
+| `initialiserAnecdotes` | Anecdote suivante au clic |
 
 ### `js/404.js` (page 404)
 
@@ -447,7 +462,7 @@ Ajouter la classe `apparition` à l'élément. Pour décaler les apparitions les
 
 - [ ] **Notre approche** : date, participants et durée du brainstorming, question de départ, idées de la carte, idées retenues, dates des étapes du projet.
 - [ ] **Charte numérique** : version, date, rédacteurs, préambule, description et règles des 9 premiers articles, texte d'engagement de l'article 10.
-- [ ] **Maubeuge** : tout le contenu de la page.
+- [ ] **Maubeuge** : relire et valider les textes (dates, lieux, événements) avec les sources.
 - [ ] **Accueil** :
   - vérifier la fiche MCA (a priori Maubeuge Construction Automobile, usine du groupe Renault) ;
   - ajouter l'adresse du site officiel de MCA (les liens mènent pour l'instant à `#`) ;
