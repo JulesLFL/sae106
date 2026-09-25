@@ -465,8 +465,6 @@ Ajouter la classe `apparition` à l'élément. Pour décaler les apparitions les
 - [ ] **Notre approche** : date et durée du brainstorming, question de départ, idées de la carte, idées retenues, dates des étapes du projet.
 - [ ] **Charte numérique** : version, date, préambule, description et règles des 9 premiers articles, texte d'engagement de l'article 10.
 - [ ] **Maubeuge** : relire et valider les textes (dates, lieux, événements) avec les sources.
-- [ ] **Accueil** :
-  - vérifier la fiche MCA (a priori Maubeuge Construction Automobile, usine du groupe Renault).
 - [ ] **Équipe** : rôle de chaque membre dans le tableau ci-dessous.
 
 ---
