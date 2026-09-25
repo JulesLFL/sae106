@@ -4,8 +4,9 @@
 @import url("components/footer.css?v=5");
 @import url("components/cartes.css?v=5");
 @import url("components/fil-ariane.css?v=5");
-@import url("components/entreprises.css?v=5");
+@import url("components/entreprises.css?v=6");
 @import url("components/sources.css?v=5");
+@import url("components/banniere.css?v=1");
 
 :root{
     --header-height: 90px;

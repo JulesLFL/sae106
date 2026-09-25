@@ -32,9 +32,9 @@ Il est servi par un conteneur **nginx** (image `nginx:alpine`) et exposé sur le
 | Page | Fichier | Contenu |
 |---|---|---|
 | **Accueil / Organisations** | `index.html` | Bannière de présentation avec fanion « SAE 106 », chiffres clés, fiches détaillées de Vallourec et de MCA (photo, logo, coordonnées, missions, impact local), sources et accès aux autres onglets. |
-| **Notre approche** | `page/onglet1.html` | Informations sur la séance de brainstorming, carte des idées (objectifs, idées, moyens, contraintes), idées retenues et frise des étapes du projet. |
-| **Écologie** | `page/onglet2.html` | Tableau comparatif des actions environnementales des deux organisations sur 6 critères, carte mentale reliée d'autres pistes possibles et sources documentaires. |
-| **Charte numérique** | `page/onglet3.html` | Charte d'utilisation des outils numériques en 10 articles, sommaire interactif et formulaire de signature en ligne. |
+| **Notre approche** | `page/onglet1.html` | Bannière avec les informations de la séance et les participants, carte des idées (objectifs, idées, moyens, contraintes), idées retenues et frise des étapes du projet. |
+| **Écologie** | `page/onglet2.html` | Bannière de présentation, tableau comparatif des actions environnementales des deux organisations sur 6 critères, carte mentale reliée d'autres pistes possibles et sources documentaires. |
+| **Charte numérique** | `page/onglet3.html` | Bannière avec version, date et rédacteurs, charte d'utilisation des outils numériques en 10 articles, sommaire interactif et formulaire de signature en ligne. |
 | **Maubeuge** | `page/onglet4.html` | Découverte de la ville : bannière animée (la Sambre qui coule), chiffres clés animés, situation géographique avec distances, frise historique interactive en 8 dates, carte interactive filtrable de 17 lieux (Leaflet + OpenStreetMap), patrimoine et culture, événements de l'année, gastronomie en cartes à retourner, anecdotes « Le saviez-vous ? » et sources. |
 | **Erreur 404** | `404.html` | Page d'erreur personnalisée sur le thème de l'espace (astronaute, terminal animé). |
 
@@ -157,10 +157,11 @@ sae106/
 │   │   ├── cartes.css          Cartes « Les autres onglets »
 │   │   ├── fil-ariane.css      Fil d'Ariane
 │   │   ├── entreprises.css     Fiches des organisations
-│   │   └── sources.css         Blocs « Sources »
+│   │   ├── sources.css         Blocs « Sources »
+│   │   └── banniere.css        Bannière bleue en haut des onglets
 │   └── pages/                  Styles propres à une page
 │       ├── index.css           Accueil (bannière, fanion, chiffres clés)
-│       ├── onglet.css          Base commune aux onglets (en-tête de page, blocs)
+│       ├── onglet.css          Base commune aux onglets (pastilles, blocs, retour)
 │       ├── brainstorming.css   Notre approche (carte des idées, frise)
 │       ├── ecologie.css        Écologie (tableau, carte mentale)
 │       ├── charte.css          Charte numérique (sommaire, articles, signature)
@@ -176,6 +177,7 @@ sae106/
 │   ├── logo_Vallourec.png      Logo de Vallourec
 │   ├── photo_vallourec.jpg     Photo de la fiche Vallourec
 │   ├── photo_mca.jpg           Photo de la fiche MCA
+│   ├── logo_mca.jpeg           Logo de MCA
 │   └── saev2.png               Ancienne bannière (plus utilisée)
 ├── nginx/default.conf          Configuration nginx (page 404, cache)
 ├── Dockerfile                  Image nginx contenant le site
@@ -413,7 +415,7 @@ Déposer l'image dans `source/` en gardant le même nom :
 | Photo de la fiche Vallourec | `source/photo_vallourec.jpg` |
 | Photo de la fiche MCA | `source/photo_mca.jpg` |
 | Logo de Vallourec | `source/logo_Vallourec.png` |
-| Logo de MCA | `source/logo_MCA.png` (absent pour l'instant : une icône s'affiche à la place) |
+| Logo de MCA | `source/logo_mca.jpeg` (affiché dans un cadre arrondi au format de l'image) |
 
 Les photos sont recadrées automatiquement (`object-fit: cover`) : une image au format paysage d'au moins 800 px de large donne le meilleur résultat.
 
@@ -460,14 +462,12 @@ Ajouter la classe `apparition` à l'élément. Pour décaler les apparitions les
 
 ## Contenus restant à compléter
 
-- [ ] **Notre approche** : date, participants et durée du brainstorming, question de départ, idées de la carte, idées retenues, dates des étapes du projet.
-- [ ] **Charte numérique** : version, date, rédacteurs, préambule, description et règles des 9 premiers articles, texte d'engagement de l'article 10.
+- [ ] **Notre approche** : date et durée du brainstorming, question de départ, idées de la carte, idées retenues, dates des étapes du projet.
+- [ ] **Charte numérique** : version, date, préambule, description et règles des 9 premiers articles, texte d'engagement de l'article 10.
 - [ ] **Maubeuge** : relire et valider les textes (dates, lieux, événements) avec les sources.
 - [ ] **Accueil** :
-  - vérifier la fiche MCA (a priori Maubeuge Construction Automobile, usine du groupe Renault) ;
-  - ajouter l'adresse du site officiel de MCA (les liens mènent pour l'instant à `#`) ;
-  - ajouter le logo `source/logo_MCA.png`.
-- [ ] **Pied de page** : noms des membres de l'équipe.
+  - vérifier la fiche MCA (a priori Maubeuge Construction Automobile, usine du groupe Renault).
+- [ ] **Équipe** : rôle de chaque membre dans le tableau ci-dessous.
 
 ---
 
@@ -477,10 +477,12 @@ Projet réalisé par des étudiants de l'IUT de Maubeuge (UPHF) dans le cadre de
 
 | Membre | Rôle |
 |---|---|
-| À compléter | À compléter |
-| À compléter | À compléter |
-| À compléter | À compléter |
-| À compléter | À compléter |
+| Enzo Labrosse | À compléter |
+| Youssef Benabdellah | À compléter |
+| Louis Payage | À compléter |
+| Yohan Trebaol | À compléter |
+| Noah Yapo | À compléter |
+| Mohamed Bouazza | À compléter |
 
 ---
 

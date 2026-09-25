@@ -1,80 +1,10 @@
-/* ---------- Bannière ---------- */
+/* ---------- Bannière (base dans components/banniere.css) ---------- */
 
 .ville-hero{
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    min-height: clamp(360px, 48vw, 460px);
-    padding: clamp(40px, 7vw, 80px) clamp(24px, 6vw, 72px) clamp(72px, 9vw, 110px);
-    border-radius: 12px;
-    color: white;
+    padding-bottom: clamp(72px, 9vw, 110px);
     background:
         radial-gradient(circle at 85% 20%, rgba(184, 137, 43, 0.35), transparent 45%),
         linear-gradient(135deg, var(--primaire-fonce) 0%, var(--primaire) 60%, #2c5282 100%);
-    box-shadow: 0 16px 40px rgba(31, 36, 48, 0.18);
-    animation: fondu-haut 0.8s ease both;
-}
-
-.ville-hero::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    -webkit-mask-image: linear-gradient(to right, transparent 20%, black);
-    mask-image: linear-gradient(to right, transparent 20%, black);
-    pointer-events: none;
-}
-
-.ville-hero-contenu{
-    position: relative;
-    z-index: 1;
-    max-width: 620px;
-}
-
-.ville-hero-surtitre{
-    display: inline-block;
-    margin: 0 0 18px;
-    padding: 4px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--or-clair);
-}
-
-.ville-hero-titre{
-    margin: 0 0 18px;
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    line-height: 1.15;
-    color: white;
-}
-
-.ville-hero-accroche{
-    margin: 0 0 32px;
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.ville-hero-actions{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.ville-hero-decor{
-    position: absolute;
-    right: 8%;
-    bottom: 30px;
-    font-size: clamp(8rem, 20vw, 14rem);
-    color: rgba(255, 255, 255, 0.07);
-    pointer-events: none;
-    animation: flotter 6s ease-in-out infinite;
 }
 
 /* La Sambre qui coule en bas de la bannière */
@@ -973,11 +903,6 @@ button.carte-lien:hover{
 }
 
 @media (max-width: 600px){
-    .ville-hero-actions .bouton{
-        width: 100%;
-        justify-content: center;
-    }
-
     .frise{
         padding: 20px 16px;
     }
@@ -1018,7 +943,6 @@ button.carte-lien:hover{
 
 @media (prefers-reduced-motion: reduce){
     .vague,
-    .ville-hero-decor,
     .anecdote-icone{
         animation: none;
     }

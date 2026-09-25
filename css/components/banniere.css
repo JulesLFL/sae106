@@ -1,0 +1,155 @@
+/* Bannière bleue en haut des onglets, même direction artistique que l'accueil */
+
+.banniere{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: clamp(340px, 44vw, 440px);
+    padding: clamp(40px, 7vw, 72px) clamp(24px, 6vw, 72px);
+    border-radius: 12px;
+    color: white;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(26, 147, 179, 0.45), transparent 45%),
+        linear-gradient(135deg, var(--primaire-fonce) 0%, var(--primaire) 60%, #2c5282 100%);
+    box-shadow: 0 16px 40px rgba(31, 36, 48, 0.18);
+    animation: fondu-haut 0.8s ease both;
+}
+
+.banniere::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    -webkit-mask-image: linear-gradient(to right, transparent 20%, black);
+    mask-image: linear-gradient(to right, transparent 20%, black);
+    pointer-events: none;
+}
+
+.banniere-contenu{
+    position: relative;
+    z-index: 1;
+    max-width: 660px;
+}
+
+.banniere-surtitre{
+    display: inline-block;
+    margin: 0 0 18px;
+    padding: 4px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--or-clair);
+}
+
+.banniere-titre{
+    margin: 0 0 18px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: white;
+}
+
+.banniere-accroche{
+    margin: 0 0 28px;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.banniere-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.banniere-decor{
+    position: absolute;
+    right: 8%;
+    bottom: 30px;
+    font-size: clamp(8rem, 20vw, 14rem);
+    color: rgba(255, 255, 255, 0.07);
+    pointer-events: none;
+    animation: flotter 6s ease-in-out infinite;
+}
+
+/* Pastilles d'informations (date, durée, version...) */
+.banniere-infos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.banniere-infos li{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.banniere-infos i{
+    color: var(--or-clair);
+}
+
+/* Liste de noms (participants, rédacteurs) */
+.banniere-equipe{
+    margin: 0 0 28px;
+}
+
+.banniere-equipe-titre{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--or-clair);
+}
+
+.banniere-equipe ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.banniere-equipe li{
+    padding: 4px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.banniere-contenu > :last-child{
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px){
+    .banniere-actions .bouton{
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .banniere-decor{
+        animation: none;
+    }
+}
