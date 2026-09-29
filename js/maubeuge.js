@@ -14,7 +14,7 @@ const LIEUX = [
         categorie: "patrimoine",
         icone: "fa-archway",
         position: [50.28029, 3.97402],
-        texte: "Porte monumentale des fortifications de Vauban. Elle abrite l'office de tourisme et le musée du Corps de Garde."
+        texte: "Porte monumentale des fortifications de Vauban, classée monument historique. Elle abrite l'office de tourisme de l'Avesnois et la Maison Folie."
     },
     {
         id: "remparts",
@@ -70,7 +70,7 @@ const LIEUX = [
         categorie: "culture",
         icone: "fa-masks-theater",
         position: [50.27733, 3.97818],
-        texte: "Scène nationale : théâtre, danse, cirque, musique et, chaque printemps, le festival VIA."
+        texte: "Scène nationale : théâtre, danse, cirque, musique et, chaque mois de mai, le festival iTAK."
     },
     {
         id: "soeurs-noires",
@@ -86,7 +86,7 @@ const LIEUX = [
         categorie: "culture",
         icone: "fa-building-columns",
         position: [50.27785, 3.97159],
-        texte: "Le musée municipal de Maubeuge, en plein centre-ville."
+        texte: "Le musée municipal des beaux-arts, installé au pôle culturel Henri-Lafitte en attendant son futur bâtiment, prévu pour 2027."
     },
     {
         id: "mabuse",
@@ -102,7 +102,7 @@ const LIEUX = [
         categorie: "culture",
         icone: "fa-industry",
         position: [50.28093, 3.95973],
-        texte: "Ancienne usine reconvertie en lieu culturel : concerts, spectacles et expositions."
+        texte: "Anciens bâtiments industriels devenus un grand lieu d'expositions et de salons, à côté de La Luna, la salle de concerts."
     },
     {
         id: "zoo",
@@ -130,11 +130,11 @@ const LIEUX = [
     },
     {
         id: "mca",
-        nom: "Usine MCA (Renault)",
+        nom: "Usine Renault (ex-MCA)",
         categorie: "vie",
         icone: "fa-car",
         position: [50.27472, 3.91483],
-        texte: "Maubeuge Construction Automobile, l'usine du groupe Renault où est fabriqué le Kangoo."
+        texte: "L'ancienne Maubeuge Construction Automobile, usine Renault du pôle ElectriCity : Kangoo, Nissan Townstar et Renault 4 E-Tech électrique."
     },
     {
         id: "gare",
@@ -147,7 +147,7 @@ const LIEUX = [
 ];
 
 const ANECDOTES = [
-    "La chanson « Le Clair de lune à Maubeuge », écrite par Pierre Perrin en 1962 et reprise notamment par Bourvil, a rendu le nom de la ville célèbre dans toute la France.",
+    "La chanson « Un clair de lune à Maubeuge », composée en 1961 par Pierre Perrin et enregistrée par Bourvil en 1962, a rendu le nom de la ville célèbre dans toute la France.",
     "Le peintre de la Renaissance Jan Gossaert est surnommé « Mabuse » : c'est une déformation du nom de sa ville natale, Maubeuge.",
     "Le nom de l'entreprise Vallourec vient de trois villes : VALenciennes, LOUvroil et RECquignies. Les deux dernières sont voisines de Maubeuge.",
     "Le zoo de Maubeuge est installé dans les anciennes fortifications de Vauban : les animaux vivent au pied des remparts du XVIIe siècle.",

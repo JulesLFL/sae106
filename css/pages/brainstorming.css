@@ -195,19 +195,6 @@
     color: var(--texte-doux);
 }
 
-.etape-date{
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: auto;
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--primaire);
-    background-color: var(--surface-2);
-}
-
 @media (max-width: 900px){
     .carte-mentale{
         grid-template-columns: 1fr 1fr;
@@ -258,10 +245,6 @@
     .etape-pastille{
         grid-row: 1 / span 4;
         margin-bottom: 0;
-    }
-
-    .etape-date{
-        justify-self: start;
     }
 }
 

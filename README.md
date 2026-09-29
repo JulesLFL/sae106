@@ -6,6 +6,8 @@ Le site présente deux organisations industrielles implantées à Maubeuge et da
 
 Il est servi par un conteneur **nginx** (image `nginx:alpine`) et exposé sur le port **30080**.
 
+Site en ligne : [https://sae106.juleslfl.dev](https://sae106.juleslfl.dev)
+
 ---
 
 ## Sommaire
@@ -103,7 +105,7 @@ Charte informatique de Renault Group - ElectriCity Maubeuge (ancienne MCA), vers
   - message affiché en bas à droite de la page ;
   - notification système du navigateur si l'utilisateur l'autorise.
 
-> **Limites de la signature** : le site est entièrement statique, sans serveur ni base de données. La signature est enregistrée uniquement dans le navigateur de la personne qui signe (`localStorage`, clé `sae106-charte-signature`), avec le numéro de version de la charte. Elle n'est envoyée à personne. Si la version change (constante `VERSION_CHARTE` dans `js/charte.js`), les anciennes signatures sont effacées et le salarié doit signer à nouveau. La notification système du navigateur ne fonctionne qu'en **HTTPS** ou sur **`localhost`** : en `http://<IP>:30080`, seul le message affiché dans la page apparaît.
+> **Limites de la signature** : le site est entièrement statique, sans serveur ni base de données. La signature est enregistrée uniquement dans le navigateur de la personne qui signe (`localStorage`, clé `sae106-charte-signature`), avec le numéro de version de la charte. Elle n'est envoyée à personne. Si la version change (constante `VERSION_CHARTE` dans `js/charte.js`), les anciennes signatures sont effacées et le salarié doit signer à nouveau. La notification système du navigateur ne fonctionne qu'en **HTTPS** ou sur **`localhost`** : elle fonctionne donc sur [https://sae106.juleslfl.dev](https://sae106.juleslfl.dev), mais en `http://<IP>:30080`, seul le message affiché dans la page apparaît.
 
 ### Page 404
 
@@ -406,7 +408,7 @@ Pour forcer une mise à jour manuellement : ouvrir la stack puis cliquer sur **P
 - Le port **30080** ne doit pas déjà être utilisé par une autre application TrueNAS. Pour le changer, modifier la ligne `"30080:80"` dans `docker-compose.yml`.
 - Le conteneur redémarre automatiquement (`restart: unless-stopped`), y compris après un redémarrage du serveur.
 - Les fichiers listés dans `.dockerignore` ne sont pas copiés dans l'image.
-- Pour que les notifications système de la charte fonctionnent, le site doit être servi en **HTTPS** (par exemple derrière un reverse proxy).
+- Pour que les notifications système de la charte fonctionnent, le site doit être servi en **HTTPS** : c'est le cas à l'adresse [https://sae106.juleslfl.dev](https://sae106.juleslfl.dev).
 
 ---
 
@@ -468,10 +470,10 @@ Ajouter la classe `apparition` à l'élément. Pour décaler les apparitions les
 
 ## Contenus restant à compléter
 
-- [ ] **Notre approche** : date et durée de la séance de brainstorming (le reste est repris du PDF).
+- [x] **Notre approche** : contenus repris du PDF, séance du 22 septembre 2026 (environ 2 h 30).
 - [x] **Charte numérique** : version, date, préambule, articles et texte d'engagement.
-- [ ] **Maubeuge** : relire et valider les textes (dates, lieux, événements) avec les sources.
-- [ ] **Équipe** : rôle de chaque membre dans le tableau ci-dessous.
+- [x] **Maubeuge** : textes vérifiés avec les sources (septembre 2026).
+- [x] **Écologie** : colonne MCA sourcée, renvois numérotés vers les sources.
 
 ---
 
@@ -479,14 +481,12 @@ Ajouter la classe `apparition` à l'élément. Pour décaler les apparitions les
 
 Projet réalisé par des étudiants de l'IUT de Maubeuge (UPHF) dans le cadre de la SAE 106.
 
-| Membre | Rôle |
-|---|---|
-| Enzo Labrosse | À compléter |
-| Youssef Benabdellah | À compléter |
-| Louis Payage | À compléter |
-| Yohan Trebaol | À compléter |
-| Noah Yapo | À compléter |
-| Mohamed Bouazza | À compléter |
+- Enzo Labrosse
+- Youssef Benabdellah
+- Louis Payage
+- Yohan Trebaol
+- Noah Yapo
+- Mohamed Bouazza
 
 ---
 

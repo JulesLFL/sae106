@@ -426,3 +426,21 @@
         font-size: 0.9rem;
     }
 }
+.note{
+    margin-left: 2px;
+    font-size: 0.75em;
+    line-height: 0;
+}
+
+.note a{
+    color: var(--primaire);
+    text-decoration: none;
+}
+
+.note a:hover{
+    text-decoration: underline;
+}
+
+.sources li[id]{
+    scroll-margin-top: 100px;
+}
