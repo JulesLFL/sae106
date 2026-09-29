@@ -32,7 +32,7 @@ Il est servi par un conteneur **nginx** (image `nginx:alpine`) et exposé sur le
 | Page | Fichier | Contenu |
 |---|---|---|
 | **Accueil / Organisations** | `index.html` | Bannière de présentation avec fanion « SAE 106 », chiffres clés, fiches détaillées de Vallourec et de MCA (photo, logo, coordonnées, missions, impact local), sources et accès aux autres onglets. |
-| **Notre approche** | `page/onglet1.html` | Bannière avec les informations de la séance et les participants, carte des idées (objectifs, idées, moyens, contraintes), idées retenues et frise des étapes du projet. |
+| **Notre approche** | `page/onglet1.html` | Bannière avec les informations de la séance et les participants, carte des idées (onglets, design, création du site, répartition des tâches), contenu prévu pour chaque onglet, idées retenues, frise des étapes du projet et notes de la séance en PDF. |
 | **Écologie** | `page/onglet2.html` | Bannière de présentation, tableau comparatif des actions environnementales des deux organisations sur 6 critères, carte mentale reliée d'autres pistes possibles et sources documentaires. |
 | **Charte numérique** | `page/onglet3.html` | Bannière avec version, date et rédacteurs, charte d'utilisation des outils numériques en 10 articles, sommaire interactif et formulaire de signature en ligne. |
 | **Maubeuge** | `page/onglet4.html` | Découverte de la ville : bannière animée (la Sambre qui coule), chiffres clés animés, situation géographique avec distances, frise historique interactive en 8 dates, carte interactive filtrable de 17 lieux (Leaflet + OpenStreetMap), patrimoine et culture, événements de l'année, gastronomie en cartes à retourner, anecdotes « Le saviez-vous ? » et sources. |
@@ -81,8 +81,11 @@ Charte informatique de Renault Group - ElectriCity Maubeuge (ancienne MCA), vers
 
 ### Notre approche
 
+- Contenus repris des notes manuscrites de la séance (`source/Brainstorm.pdf`).
 - Carte des idées en quatre branches de couleur autour de la question de départ.
+- Contenu prévu pour chaque onglet (Maubeuge, organisations, écologie).
 - Frise des étapes du projet : horizontale sur ordinateur, verticale sur mobile.
+- Notes de brainstorming affichées dans la page (lecteur PDF du navigateur), avec des boutons « Ouvrir le PDF » et « Télécharger ». Sur certains téléphones, le PDF ne s'affiche pas dans la page : les boutons restent disponibles.
 
 ### Charte numérique
 
@@ -164,7 +167,7 @@ sae106/
 │   └── pages/                  Styles propres à une page
 │       ├── index.css           Accueil (bannière, fanion, chiffres clés)
 │       ├── onglet.css          Base commune aux onglets (pastilles, blocs, retour)
-│       ├── brainstorming.css   Notre approche (carte des idées, frise)
+│       ├── brainstorming.css   Notre approche (carte des idées, frise, lecteur PDF)
 │       ├── ecologie.css        Écologie (tableau, carte mentale)
 │       ├── charte.css          Charte numérique (sommaire, articles, signature)
 │       ├── maubeuge.css        Maubeuge (bannière, frise, carte, cartes à retourner)
@@ -174,7 +177,8 @@ sae106/
 │   ├── charte.js               Sommaire interactif et signature de la charte
 │   ├── maubeuge.js             Compteurs, frise, carte interactive, gastronomie, anecdotes
 │   └── 404.js                  Étoiles, terminal animé et astronaute de la page 404
-├── source/                     Images
+├── source/                     Images et documents
+│   ├── Brainstorm.pdf          Notes manuscrites de la séance de brainstorming
 │   ├── logo.png                Logo de l'IUT (en-tête, pied de page, favicon)
 │   ├── logo_Vallourec.png      Logo de Vallourec
 │   ├── photo_vallourec.jpg     Photo de la fiche Vallourec
@@ -464,7 +468,7 @@ Ajouter la classe `apparition` à l'élément. Pour décaler les apparitions les
 
 ## Contenus restant à compléter
 
-- [ ] **Notre approche** : date et durée du brainstorming, question de départ, idées de la carte, idées retenues, dates des étapes du projet.
+- [ ] **Notre approche** : date et durée de la séance de brainstorming (le reste est repris du PDF).
 - [x] **Charte numérique** : version, date, préambule, articles et texte d'engagement.
 - [ ] **Maubeuge** : relire et valider les textes (dates, lieux, événements) avec les sources.
 - [ ] **Équipe** : rôle de chaque membre dans le tableau ci-dessous.

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="../css/style.css?v=7" rel="stylesheet">
     <link href="../css/pages/onglet.css?v=6" rel="stylesheet">
-    <link href="../css/pages/brainstorming.css?v=5" rel="stylesheet">
+    <link href="../css/pages/brainstorming.css?v=6" rel="stylesheet">
     <title>Notre approche - SAE 106</title>
     <script>document.documentElement.classList.add("js");</script>
     <script src="../js/main.js?v=5" defer></script>
@@ -79,6 +79,10 @@
                         <i class="fa-solid fa-list-check" aria-hidden="true"></i>
                         Les étapes du projet
                     </a>
+                    <a class="bouton bouton-contour" href="#titre-notes">
+                        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                        Nos notes (PDF)
+                    </a>
                 </div>
             </div>
             <i class="fa-solid fa-lightbulb banniere-decor" aria-hidden="true"></i>
@@ -89,38 +93,83 @@
             <div class="carte-mentale">
                 <div class="sujet apparition">
                     <span class="sujet-label">Question de départ</span>
-                    <p>Question ou sujet du brainstorming : à compléter</p>
+                    <p>Quelles idées pour notre site ?</p>
                 </div>
                 <article class="branche apparition" style="--delai: 1; --couleur: var(--primaire)">
-                    <h3><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Objectifs</h3>
+                    <h3><i class="fa-solid fa-table-columns" aria-hidden="true"></i> Les onglets du site</h3>
                     <ul class="idees">
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
+                        <li>Page d'accueil : les organisations</li>
+                        <li>Démarche : le brainstorming</li>
+                        <li>Écologie</li>
+                        <li>Charte numérique : MCA</li>
+                        <li>Découvrir Maubeuge</li>
+                        <li>Pied de page avec les noms du groupe</li>
                     </ul>
                 </article>
                 <article class="branche apparition" style="--delai: 2; --couleur: var(--accent)">
-                    <h3><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Idées</h3>
+                    <h3><i class="fa-solid fa-palette" aria-hidden="true"></i> Le design</h3>
                     <ul class="idees">
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
+                        <li>Moderne ?</li>
+                        <li>Sombre ?</li>
+                        <li>Pro ?</li>
+                        <li>Animations faibles, moyennes ou grandes ?</li>
+                        <li>Simple d'utilisation : un menu simple</li>
+                        <li>Carte interactive ?</li>
                     </ul>
                 </article>
                 <article class="branche apparition" style="--delai: 3; --couleur: var(--or)">
-                    <h3><i class="fa-solid fa-wrench" aria-hidden="true"></i> Moyens</h3>
+                    <h3><i class="fa-solid fa-code" aria-hidden="true"></i> La création du site</h3>
                     <ul class="idees">
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
+                        <li>Par nous-mêmes ?</li>
+                        <li>Via une base WordPress ?</li>
+                        <li>Présentation en diaporama ?</li>
+                        <li>Un site à plusieurs onglets</li>
                     </ul>
                 </article>
                 <article class="branche apparition" style="--delai: 4; --couleur: var(--vert)">
-                    <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Contraintes</h3>
+                    <h3><i class="fa-solid fa-people-group" aria-hidden="true"></i> La répartition des tâches</h3>
                     <ul class="idees">
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
-                        <li>Idée à compléter</li>
+                        <li>Trouver les informations sur les organisations</li>
+                        <li>Sur la charte numérique</li>
+                        <li>Sur l'écologie</li>
+                        <li>Sur Maubeuge</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="bloc" aria-labelledby="titre-contenus">
+            <h2 id="titre-contenus" class="section-titre apparition">Le contenu des onglets</h2>
+            <p class="section-intro apparition">Pour chaque grand thème, les pistes notées pendant la séance.</p>
+            <div class="contenus">
+                <article class="branche apparition" style="--delai: 1; --couleur: var(--primaire)">
+                    <h3><i class="fa-solid fa-city" aria-hidden="true"></i> Maubeuge</h3>
+                    <ul class="idees">
+                        <li>Faire découvrir la ville</li>
+                        <li>Monuments et histoire de la ville</li>
+                        <li>Activités et endroits</li>
+                        <li>Carte (interactive ?)</li>
+                        <li>Infographie sur la ville : population, superficie</li>
+                        <li>Un "guide touristique" de la ville</li>
+                    </ul>
+                </article>
+                <article class="branche apparition" style="--delai: 2; --couleur: var(--accent)">
+                    <h3><i class="fa-solid fa-building" aria-hidden="true"></i> Organisations et entreprises</h3>
+                    <ul class="idees">
+                        <li>Entreprise, association ou collectivité à Maubeuge</li>
+                        <li>Pôle ou centre d'activité</li>
+                        <li>Informations au sein de l'organisation</li>
+                        <li>Présentation de deux entreprises locales : Vallourec et MCA / Renault ElectriCity</li>
+                    </ul>
+                </article>
+                <article class="branche apparition" style="--delai: 3; --couleur: var(--vert)">
+                    <h3><i class="fa-solid fa-leaf" aria-hidden="true"></i> Écologie</h3>
+                    <ul class="idees">
+                        <li>Actions pour l'écologie</li>
+                        <li>Durables ?</li>
+                        <li>Non durables ?</li>
+                        <li>Actions mises en place</li>
+                        <li>Infrastructures favorables à l'écologie</li>
                     </ul>
                 </article>
             </div>
@@ -128,18 +177,23 @@
 
         <section class="bloc" aria-labelledby="titre-retenues">
             <h2 id="titre-retenues" class="section-titre apparition">Les idées retenues</h2>
+            <p class="section-intro apparition">Les idées que nous avons entourées sur nos notes.</p>
             <ol class="retenues">
                 <li class="apparition" style="--delai: 1">
-                    <h3>Idée retenue à compléter</h3>
-                    <p>Pourquoi nous l'avons choisie : à compléter.</p>
+                    <h3>Un design moderne</h3>
+                    <p>Choisi parmi moderne, sombre ou pro, avec un site simple d'utilisation et un menu simple.</p>
                 </li>
                 <li class="apparition" style="--delai: 2">
-                    <h3>Idée retenue à compléter</h3>
-                    <p>Pourquoi nous l'avons choisie : à compléter.</p>
+                    <h3>Des animations moyennes</h3>
+                    <p>Ni trop faibles, ni trop grandes.</p>
                 </li>
                 <li class="apparition" style="--delai: 3">
-                    <h3>Idée retenue à compléter</h3>
-                    <p>Pourquoi nous l'avons choisie : à compléter.</p>
+                    <h3>Un site créé par nous-mêmes</h3>
+                    <p>Plutôt qu'à partir d'une base WordPress ou d'une présentation en diaporama.</p>
+                </li>
+                <li class="apparition" style="--delai: 4">
+                    <h3>Une carte interactive</h3>
+                    <p>Pour faire découvrir Maubeuge.</p>
                 </li>
             </ol>
         </section>
@@ -148,41 +202,54 @@
             <h2 id="titre-etapes" class="section-titre apparition">Les étapes du projet</h2>
             <ol class="frise">
                 <li class="etape apparition" style="--delai: 1">
-                    <span class="etape-pastille"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+                    <span class="etape-pastille"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
                     <span class="etape-num">Étape 1</span>
-                    <h3>Brainstorming</h3>
-                    <p>Rassembler toutes les idées de l'équipe.</p>
-                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                    <h3>Recherches</h3>
+                    <p>Trouver les informations et développer nos idées.</p>
                 </li>
                 <li class="etape apparition" style="--delai: 2">
-                    <span class="etape-pastille"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+                    <span class="etape-pastille"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span>
                     <span class="etape-num">Étape 2</span>
-                    <h3>Recherches</h3>
-                    <p>Se documenter sur les organisations et le territoire.</p>
-                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                    <h3>Questions</h3>
+                    <p>Trouver des questions pour la séance de TD.</p>
                 </li>
                 <li class="etape apparition" style="--delai: 3">
-                    <span class="etape-pastille"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i></span>
+                    <span class="etape-pastille"><i class="fa-solid fa-filter" aria-hidden="true"></i></span>
                     <span class="etape-num">Étape 3</span>
-                    <h3>Rédaction</h3>
-                    <p>Rédiger les contenus de chaque onglet.</p>
-                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                    <h3>Sélection</h3>
+                    <p>Resélectionner les informations utiles et intéressantes.</p>
                 </li>
                 <li class="etape apparition" style="--delai: 4">
-                    <span class="etape-pastille"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                    <span class="etape-pastille"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
                     <span class="etape-num">Étape 4</span>
-                    <h3>Création du site</h3>
-                    <p>Mettre en page et publier le site.</p>
-                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                    <h3>Organisation</h3>
+                    <p>Organiser le travail en plusieurs parties et tâches.</p>
                 </li>
                 <li class="etape apparition" style="--delai: 5">
-                    <span class="etape-pastille"><i class="fa-solid fa-person-chalkboard" aria-hidden="true"></i></span>
+                    <span class="etape-pastille"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
                     <span class="etape-num">Étape 5</span>
-                    <h3>Présentation</h3>
-                    <p>Présenter le projet à l'oral.</p>
-                    <span class="etape-date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> Date : à compléter</span>
+                    <h3>Développement</h3>
+                    <p>Développer nos idées sur le site.</p>
                 </li>
             </ol>
+        </section>
+
+        <section class="bloc" aria-labelledby="titre-notes">
+            <h2 id="titre-notes" class="section-titre apparition">Nos notes de brainstorming</h2>
+            <p class="section-intro apparition">Les notes prises pendant la séance, telles quelles, pour voir comment nous avons réfléchi.</p>
+            <div class="notes-pdf apparition">
+                <iframe class="notes-pdf-lecteur" src="../source/Brainstorm.pdf#view=FitH" title="Notes manuscrites de la séance de brainstorming (PDF)" loading="lazy"></iframe>
+                <div class="notes-pdf-actions">
+                    <a class="bouton" href="../source/Brainstorm.pdf" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i>
+                        Ouvrir le PDF
+                    </a>
+                    <a class="bouton bouton-secondaire" href="../source/Brainstorm.pdf" download="brainstorming-sae106.pdf">
+                        <i class="fa-solid fa-download" aria-hidden="true"></i>
+                        Télécharger
+                    </a>
+                </div>
+            </div>
         </section>
 
         <div class="retour apparition">
