@@ -1,4 +1,5 @@
 const CLE_STOCKAGE = "sae106-charte-signature";
+const VERSION_CHARTE = "1.0";
 const LARGEUR_BUREAU = 900;
 
 const sommaire = document.querySelector("#sommaire");
@@ -333,13 +334,14 @@ function signer(evenement) {
         nom: champNom.value.trim(),
         prenom: champPrenom.value.trim(),
         date: champDate.value,
+        version: VERSION_CHARTE,
         image: imageSignature()
     };
 
     enregistrerSignature(signature);
     afficherSignee(signature);
 
-    const message = "La charte numérique a bien été signée par " + signature.prenom + " " + signature.nom + " le " + signature.date + ".";
+    const message = "La charte numérique a bien été signée par " + signature.prenom + " " + signature.nom + " le " + signature.date + " (version " + VERSION_CHARTE + ").";
     notifier(message);
     notifierSysteme(message);
 }
@@ -382,9 +384,12 @@ adapterSommaire();
 suivreLecture();
 
 const signatureExistante = lireSignature();
-if (signatureExistante) {
+if (signatureExistante && signatureExistante.version === VERSION_CHARTE) {
     champDate.value = dateDuJour();
     afficherSignee(signatureExistante);
 } else {
+    if (signatureExistante) {
+        supprimerSignature();
+    }
     afficherFormulaire();
 }

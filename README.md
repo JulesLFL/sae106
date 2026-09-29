@@ -42,16 +42,18 @@ Toutes les pages partagent le même en-tête (logo, menu, menu burger sur mobile
 
 ### Les 10 articles de la charte numérique
 
-1. L'utilisation du matériel personnel
-2. Les moyens de surveillance des salariés
-3. L'utilisation de la messagerie électronique
-4. L'accès internet pour raisons personnelles
-5. Les sanctions
-6. Règles pour créer et gérer les mots de passe
-7. L'utilisation du VPN en cas de télétravail
-8. Une politique de gestion de crise
-9. La maintenance des systèmes informatiques
-10. La signature du salarié
+Charte informatique de Renault Group - ElectriCity Maubeuge (ancienne MCA), version 1.0 du 29 septembre 2026.
+
+1. Matériel personnel
+2. Surveillance informatique
+3. Messagerie électronique
+4. Internet à titre personnel
+5. Mot de passe
+6. Télétravail et VPN
+7. Gestion des incidents et des crises
+8. Maintenance
+9. Sanctions
+10. Engagement du salarié (avec le formulaire de signature)
 
 ---
 
@@ -98,7 +100,7 @@ Toutes les pages partagent le même en-tête (logo, menu, menu burger sur mobile
   - message affiché en bas à droite de la page ;
   - notification système du navigateur si l'utilisateur l'autorise.
 
-> **Limites de la signature** : le site est entièrement statique, sans serveur ni base de données. La signature est enregistrée uniquement dans le navigateur de la personne qui signe (`localStorage`, clé `sae106-charte-signature`). Elle n'est envoyée à personne. La notification système du navigateur ne fonctionne qu'en **HTTPS** ou sur **`localhost`** : en `http://<IP>:30080`, seul le message affiché dans la page apparaît.
+> **Limites de la signature** : le site est entièrement statique, sans serveur ni base de données. La signature est enregistrée uniquement dans le navigateur de la personne qui signe (`localStorage`, clé `sae106-charte-signature`), avec le numéro de version de la charte. Elle n'est envoyée à personne. Si la version change (constante `VERSION_CHARTE` dans `js/charte.js`), les anciennes signatures sont effacées et le salarié doit signer à nouveau. La notification système du navigateur ne fonctionne qu'en **HTTPS** ou sur **`localhost`** : en `http://<IP>:30080`, seul le message affiché dans la page apparaît.
 
 ### Page 404
 
@@ -240,7 +242,7 @@ grep -rl "?v=5" --exclude-dir=.git . | xargs sed -i 's/?v=5/?v=6/g'
 | Sommaire | Ouverture automatique sur ordinateur, fermeture après un clic sur mobile, section active, compteur et barre de lecture |
 | Zone de signature | Dessin sur un `<canvas>` avec la souris, le doigt ou un stylet, adapté aux écrans haute définition |
 | Formulaire | Vérification des champs, de la signature et de la case d'engagement |
-| Enregistrement | Sauvegarde, lecture et suppression de la signature dans le `localStorage` du navigateur |
+| Enregistrement | Sauvegarde, lecture et suppression de la signature dans le `localStorage` du navigateur ; une signature d'une ancienne version de la charte (`VERSION_CHARTE`) est ignorée |
 | Notifications | Message dans la page et notification système du navigateur |
 
 ### `js/maubeuge.js` (Maubeuge)
@@ -463,7 +465,7 @@ Ajouter la classe `apparition` à l'élément. Pour décaler les apparitions les
 ## Contenus restant à compléter
 
 - [ ] **Notre approche** : date et durée du brainstorming, question de départ, idées de la carte, idées retenues, dates des étapes du projet.
-- [ ] **Charte numérique** : version, date, préambule, description et règles des 9 premiers articles, texte d'engagement de l'article 10.
+- [x] **Charte numérique** : version, date, préambule, articles et texte d'engagement.
 - [ ] **Maubeuge** : relire et valider les textes (dates, lieux, événements) avec les sources.
 - [ ] **Équipe** : rôle de chaque membre dans le tableau ci-dessous.
 
